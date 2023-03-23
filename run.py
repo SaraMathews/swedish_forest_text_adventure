@@ -1,9 +1,10 @@
 import time
 
-from colorama import Fore
+from colorama import Fore, Style
 
 global axe 
 axe = "no"
+
 
 def play_game():
     """
@@ -43,8 +44,8 @@ def play_game():
         time.sleep(2)
         print("The cold autumn wind sends shivers down your spine...")
         time.sleep(2)
-        print("When you listen closely, you can hear the trees " 
-        "whispering to each other...\n")
+        print("When you listen closely, you can hear the trees "
+              "whispering to each other...\n")
         time.sleep(2)
         print("You can't stay here, you have to find a way out!\n")
         time.sleep(1.5)
@@ -66,9 +67,9 @@ def play_game():
 
 def first_question():
     """
-    Presents the player with the first question, 
+    Presents the player with the first question,
     to either cross the stream or follow the stream.
-    Depedning on the answer the player eiter continues to 
+    Depedning on the answer the player eiter continues to
     second_question, or it's game over.
     """
     print("You try to stand up...")
@@ -93,7 +94,7 @@ def first_question():
         your_answer = input("What do you do? (a or b): ")
         print("\n--------------------------------------")
 
-        # If the player answers "a" the loop breaks and they continue 
+        # If the player answers "a" the loop breaks and they continue
         # to second_question
         if your_answer.lower() == "a":
             time.sleep(1.5)
@@ -116,7 +117,7 @@ def first_question():
 
         # If the player answers neither a or b they are promped to answer
         # the question again
-        else: 
+        else:
             while True:
                 print("Invalid choice. Please enter a or b.")
                 your_answer = input("What do you do? (a or b): ")
@@ -127,24 +128,24 @@ def first_question():
 
 def second_question():
     """
-    Presents the player with the second question, 
-    to either approach the group of people or stay away from them. 
-    Depedning on the answer the player eiter continues to 
+    Presents the player with the second question,
+    to either approach the group of people or stay away from them.
+    Depedning on the answer the player eiter continues to
     first_riddle, or it's game over.
     """
     print("\nYou follow the stream. After a while it narrows down enough "
-    "for you to jump over.\n")
+          "for you to jump over.\n")
     time.sleep(1.5)
-    print("When you have landed on the other side of the stream")
-    print("You find a log to sit on. You need to catch your breath.\n")
+    print("When you have landed on the other side of the stream,")
+    print("you find a log to sit on. You need to catch your breath.\n")
     time.sleep(1.5)
     print("But what's that sound?\n")
     time.sleep(1.5)
     print("People! You can hear a faint laugther coming from inside the "
-    "forest")
+          "forest")
     time.sleep(1.5)
     print("You now notice a bonfire in the distance. "
-    "Maybe they can help you?\n")
+          "Maybe they can help you?\n")
     time.sleep(1.5)
 
     # Displays the question and answers
@@ -152,14 +153,14 @@ def second_question():
         print("Do you:")
         time.sleep(1.5)
         print("a) Approach the group of people and ask for directions out of "
-        "the forest")
+              "the forest")
         time.sleep(1.5)
         print("b) Stay away from them. You don't know who these people are\n")
         time.sleep(1.5)
         your_answer = input("What do you do? (a or b): ")
         print("\n--------------------------------------")
 
-        # If the player answers "a" the loop breaks and they continue 
+        # If the player answers "a" the loop breaks and they continue
         # to first_riddle
         if your_answer.lower() == "b":
             time.sleep(1.5)
@@ -185,7 +186,7 @@ def second_question():
             print("")
             time.sleep(1.5)
             print("They are having a barbecue, and you just served them "
-            "dessert...\n")
+                  "dessert...\n")
             game_over()
             time.sleep(1.5)
             restart_game()
@@ -194,7 +195,7 @@ def second_question():
 
         # If the player answers neither a or b they are promped to answer
         # the question again
-        else: 
+        else:
             while True:
                 print("Invalid choice. Please enter a or b.")
                 your_answer = input("What do you do? (a or b): ")
@@ -204,6 +205,12 @@ def second_question():
 
 
 def third_question():
+    """
+    Presents the player with the third question,
+    to either take the axe or leave it.
+    Depedning on if the player answers yes or no, different print
+    messages are displayed. Both answers leads to first_riddle
+    """
     print("\nGood choice! Trust no one.\n")
     time.sleep(2)
     print("It feels like you've been walking for hours")
@@ -219,17 +226,20 @@ def third_question():
     print("And who does it belongs to...?\n")
     time.sleep(1.5)
 
+    # Displays the third question. Both answers leads to first_riddle
     while True:
         global axe
         axe = input("Do you take the axe with you? (yes or no): ")
         if axe == "yes":
             time.sleep(1.5)
-            print("\nThat's probably a smart move, considering what might be out there..\n")
+            print("\nThat's probably a smart move, considering what "
+                  "might be out there..\n")
             first_riddle()
             break
         elif axe == "no":
             time.sleep(1.5)
-            print("\nThat's probably a smart move, the owner of the axe will not be happy when he notices it's gone...\n")
+            print("\nThat's probably a smart move, the owner of the axe will "
+                  "not be happy when he notices it's gone...\n")
             first_riddle()
             break
         else: 
@@ -239,29 +249,29 @@ def third_question():
 
 
 def first_riddle():
-     """
-    Presents the player with the first riddle. 
-     Depedning on the answer the player eiter continues to 
-     econd_riddle, or it's game over.
+    """
+    Presents the player with the first riddle.
+    Depedning on the answer the player eiter continues to
+    econd_riddle, or it's game over.
      """
 
 
 def second_riddle():
     """
-    Presents the player with the second riddle. 
-    Depedning on the answer the player eiter continues to 
+    Presents the player with the second riddle.
+    Depedning on the answer the player eiter continues to
     third_question, or it's game over.
     """
 
 
 def final_question():
     """
-    Presents the player with the final question. 
-    The player now has three options: 
-    Fight the giant, talk to the giant, or sneak past the giant. 
-    Depedning on the answer it's either game over, 
-    game finished (player made it out of the forest) 
-    or player is taken back to first_riddle. 
+    Presents the player with the final question.
+    The player now has three options:
+    Fight the giant, talk to the giant, or sneak past the giant.
+    Depedning on the answer it's either game over,
+    game finished (player made it out of the forest)
+    or player is taken back to first_riddle.
     """
 
 
