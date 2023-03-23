@@ -7,7 +7,7 @@ def play_game():
     Starts the adventure game with a welcome message.
     Lets the player choose a character name.
     Asks the player if they are ready to play the game.
-    Introduces the conditions before displaying the first question.
+    Displays indtroduction before the first question.
     """
     print("\nThis is the Swedish Forest Text Adventure Game\n")
     time.sleep(1)
@@ -29,6 +29,7 @@ def play_game():
         are_you_ready = input("\nHmm... was that a yes or a no? ")
         time.sleep(1)
 
+    # If the player answers yes, the game continues with the introduction
     if are_you_ready.lower() == "yes":
         print("")
         print(f"Well then, {name}! Get ready...\n")
@@ -40,7 +41,7 @@ def play_game():
         print("The cold autumn wind sends shivers down your spine...")
         time.sleep(2)
         print("When you listen closely, you can hear the trees " 
-              "whispering to each other...\n")
+        "whispering to each other...\n")
         time.sleep(2)
         print("You can't stay here, you have to find a way out!\n")
         time.sleep(1.5)
@@ -49,13 +50,14 @@ def play_game():
         print("Good luck, see you on the other side...hopfully.\n")
         time.sleep(2)
         first_question()
+
+    # If the player answers no, the game over and restart game functions are called
     else: 
         print("\nIt's game over before it even begins!\n")
         game_over()
         time.sleep(1)
         restart_game()
         
-
 
 def first_question():
     """
@@ -64,6 +66,30 @@ def first_question():
     Depedning on the answer the player eiter continues to 
     second_question, or it's game over.
     """
+    print("You try to stand up...")
+    print("Your head is spinning.")
+    print("But you need to get going.")
+    print("You stumble through the forest until you reach a small stream.")
+    print("It looks calm.")
+    print("Do you:")
+    print("a) Follow the stream until you find a safer way to cross it")
+    print("b) Cross the stream and hope it is as calm as it looks")
+    your_answer = input("What do you do (a or b)? ")
+
+    if your_answer.lower() == "a":
+        second_question()
+        print("You follow the stream. After a while it narrows down enough "
+        "for you to jump over.")
+    elif your_answer.lower() == "b":
+        print("You attempt to cross the stream.")
+        print("But oh no! Quicksand!\n")
+        print("It drags you down and you drown.\n")
+        game_over()
+        restart_game()
+
+    else: 
+        print("Invalid choice. Please enter a or b.")
+        first_question()
 
 def second_question():
     """
@@ -139,4 +165,3 @@ def restart_game():
         exit()
 
 play_game()
-first_question()
