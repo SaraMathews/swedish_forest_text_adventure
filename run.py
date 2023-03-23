@@ -5,6 +5,27 @@ from colorama import Fore, Style
 global axe 
 axe = "no"
 
+riddles = {
+        "First riddle": {
+            "riddle": "This thing all things devours;\n"
+                      "Birds, beasts, trees, flowers;\n"
+                      "Gnaws iron, bites steel;\n"
+                      "Grinds hard stones to meal;\n"
+                      "Slays king, ruins town,\n"
+                      "And beats mountain down.\n",
+            "answers": ["time", "wind"]
+        },
+        "Second riddle": {
+            "riddle": "It cannot be seen, cannot be felt,\n"
+                      "Cannot be heard, cannot be smelt.\n"
+                      "It lies behind stars and under hills,\n"
+                      "And empty holes it fills.\n"
+                      "It comes out first and follows after,\n"
+                      "Ends life, kills laughter.\n",
+            "answers": ["dark", "shadow"]
+        }
+    }
+
 
 def play_game():
     """
@@ -252,8 +273,42 @@ def first_riddle():
     """
     Presents the player with the first riddle.
     Depedning on the answer the player eiter continues to
-    econd_riddle, or it's game over.
-     """
+    second_riddle, or it's game over.
+    """
+    print("You're thirsty...and tired.")
+    print("After a while you decide you need a rest")
+    print("And look over there!")
+    print("A small lake")
+    print("You spash your face with water and have a drink")
+    print("You don't notice the creature Gollum sneaking up behind you..")
+    print("################")
+    print("#              #")
+    print("#     BOOO     #")
+    print("#              #")
+    print("################")
+    print("Gollum won't let you go until you've answered both of his riddles\n")
+    print("But he's in a good mood today..")
+    print("He just found his missing gold ring\n")
+    print("So he's giving you a fair chance to answer his riddles")
+    print("Think carefully... \n")
+    while True:
+        print(riddles["First riddle"]["riddle"])
+        your_answer = input("What is it, time or wind?")
+
+        if your_answer in riddles["First riddle"]["answers"][0]:
+            print("Correct!")
+            print("One riddle left...")
+            second_riddle()
+            break
+        elif your_answer == riddles["First riddle"]["answers"][1]:
+            print("Wrong answer...")
+            game_over()
+            restart_game()
+            break
+        else: 
+            print("Invalid answer. Please choose between time or wind.\n")
+            time.sleep(1)
+            continue
 
 
 def second_riddle():
@@ -310,5 +365,6 @@ def restart_game():
         print("  /~____   \"  ) ")
         print("(_____\/    / \n") 
         exit()
+
 
 play_game()
