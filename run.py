@@ -37,6 +37,7 @@ def play_game():
         first_question()
     else: 
         print("It's game over before it even begins!")
+        game_over()
         restart_game()
 
 
@@ -86,11 +87,22 @@ def final_question():
     win (player made it out of the forest) or player is taken back to first_riddle. 
     """
 
+def game_over():
+    """
+    Is called every time the player answers a question/riddle wrong. 
+    Displays a Game Over box before the restart_game function
+    """
+    print(Fore.RED + " ######################")
+    print(Fore.RED + " #                    #")
+    print(Fore.RED + " #      GAME OVER     #")
+    print(Fore.RED + " #                    #")
+    print(Fore.RED + " ######################")
+    print(Style.RESET_ALL)
+
 def restart_game():
     """
     Is called every time the player answers a question/riddle wrong. 
-    Displays a Game Over box and lets the player choose to either restart 
-    the game or exit.  
+    Lets the player choose to either restart the game or exit.  
     """
     restart_game = input("Do you want to restart the game? (yes or no): ")
     while restart_game.lower() not in ["yes", "no"]:
@@ -107,5 +119,7 @@ def restart_game():
         print("(_____\/    / \n") 
         exit()
 
+
 play_game()
+game_over()
 restart_game()
