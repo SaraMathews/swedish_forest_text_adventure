@@ -78,6 +78,7 @@ def first_question():
     print("It looks calm.\n")
     time.sleep(1.5)
     
+    # Displays the question and answers
     while True:
         print("Do you:")
         time.sleep(1.5)
@@ -88,11 +89,14 @@ def first_question():
         your_answer = input("What do you do? (a or b): ")
         print("\n--------------------------------------")
 
+        # If the player answers "a" the loop breaks and they continue 
+        # to second_question
         if your_answer.lower() == "a":
             time.sleep(1.5)
             second_question()
             break
 
+        # If the player answers "b" the loop breaks and it's game over
         elif your_answer.lower() == "b":
             print("\nYou attempt to cross the stream.\n")
             time.sleep(1.5)
@@ -106,6 +110,8 @@ def first_question():
             time.sleep(1.5)
             break
 
+        # If the player answers neither a or b they are promped to answer
+        # the question again
         else: 
             while True:
                 print("Invalid choice. Please enter a or b.")
@@ -133,7 +139,8 @@ def second_question():
     time.sleep(1.5)
     print("You now notice a bonfire in the distance. Maybe they can help you?\n")
     time.sleep(1.5)
-    
+
+    # Displays the question and answers
     while True:
         print("Do you:")
         time.sleep(1.5)
@@ -143,11 +150,14 @@ def second_question():
         time.sleep(1.5)
         your_answer = input("What do you do? (a or b): ")
 
+        # If the player answers "a" the loop breaks and they continue 
+        # to first_riddle
         if your_answer.lower() == "b":
             time.sleep(1.5)
             first_riddle()
             break
 
+        # If the player answers "b" the loop breaks and it's game over
         elif your_answer.lower() == "a":
             print("\nYou approach the group of people.\n")
             time.sleep(1.5)
@@ -171,7 +181,9 @@ def second_question():
             restart_game()
             time.sleep(1.5)
             break
-
+        
+        # If the player answers neither a or b they are promped to answer
+        # the question again
         else: 
             while True:
                 print("Invalid choice. Please enter a or b.")
