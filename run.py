@@ -9,36 +9,52 @@ def play_game():
     Asks the player if they are ready to play the game.
     Introduces the conditions before displaying the first question.
     """
-    print("This is the Swedish Forest Text Adventure Game")
+    print("\nThis is the Swedish Forest Text Adventure Game\n")
+    time.sleep(1)
 
-    # Character name must be chosen before continuing 
-    print("Welcome brave adventurer!")
+    # Character name must be chosen before continuing
+    print("Welcome brave adventurer!\n")
+    time.sleep(1)
     character_names = ["Bjorn", "Ragnar", "Hilda"]
-    name = input(f"Choose one of the following character names:{','.join(character_names)}:")
+    name = input(f"Choose one of the following character names: {', '.join(character_names)}: ")
     while name not in character_names:
-        print("That's not one of the options. Please try again")
+        print("\nThat's not one of the options. Please try again\n")
         name = input(f"Choose one of the following character names: {','.join(character_names)}:")
-    
+    time.sleep(1)
+
     # Asks the player if they are ready. They must enter yes or no
-    are_you_ready = input(f"Are you ready to enter the deep, dark Swedish forest, {name}? (yes/no):")
+    are_you_ready = input(f"\nAre you ready to enter the deep, dark Swedish forest, {name}? (yes/no): ")
+    time.sleep(1)
     while are_you_ready.lower() not in ["yes", "no"]:
-        are_you_ready = input("Hmm... was that a yes or a no?")
+        are_you_ready = input("\nHmm... was that a yes or a no? ")
+        time.sleep(1)
 
     if are_you_ready.lower() == "yes":
-        print(f"Well then, {name}! Get ready...")
+        print("")
+        print(f"Well then, {name}! Get ready...\n")
+        time.sleep(1.5)
         print("You find yourself lost in the Swedish forest...")
-        print("With no memory of how you got there...")
+        time.sleep(2)
+        print("With no memory of how you got there...\n")
+        time.sleep(2)
         print("The cold autumn wind sends shivers down your spine...")
-        print("When you listen closely, you can hear the trees" 
-              "whispering to each other...")
-        print("You can't stay here, you have to find a way out!")
-        print("Or else.. who knows what's lurking in the dark...")
-        print("Good luck, see you on the other side...hopfully.")
+        time.sleep(2)
+        print("When you listen closely, you can hear the trees " 
+              "whispering to each other...\n")
+        time.sleep(2)
+        print("You can't stay here, you have to find a way out!\n")
+        time.sleep(1.5)
+        print("Or else.. who knows what's lurking in the dark...\n")
+        time.sleep(2)
+        print("Good luck, see you on the other side...hopfully.\n")
+        time.sleep(2)
         first_question()
     else: 
-        print("It's game over before it even begins!")
+        print("\nIt's game over before it even begins!\n")
         game_over()
+        time.sleep(1)
         restart_game()
+        
 
 
 def first_question():
@@ -109,8 +125,11 @@ def restart_game():
         print("Please enter either 'yes' or 'no'.")
         restart_game = input("Do you want to restart the game? (yes or no): \n")
     if restart_game.lower() == "yes":
+        print("\n--------------------------------------")
+        time.sleep(1.5)
         play_game()
     else:
+        time.sleep(1)
         print("")
         print("Bye then!")
         print("        /\\_/\\   ")
@@ -119,7 +138,5 @@ def restart_game():
         print("(_____\/    / \n") 
         exit()
 
-
 play_game()
-game_over()
-restart_game()
+first_question()
