@@ -41,14 +41,23 @@ def play_game():
     print("Welcome brave adventurer!\n")
     time.sleep(1)
     character_names = ["Bjorn", "Ragnar", "Hilda"]
-    name = input(f"Choose one of the following character names: {', '.join(character_names)}: ")
+    name = input(
+        "Choose one of the following "
+        f"character names: {', '.join(character_names)}: "
+                )
     while name not in character_names:
         print("\nThat's not one of the options. Please try again\n")
-        name = input(f"Choose one of the following character names: {','.join(character_names)}:")
+        name = input(
+            "Choose one of the following "
+            f"character names: {','.join(character_names)}:"
+            )
     time.sleep(1)
 
     # Asks the player if they are ready. They must enter yes or no
-    are_you_ready = input(f"\nAre you ready to enter the deep, dark Swedish forest, {name}? (yes or no): ")
+    are_you_ready = input(
+        "\nAre you ready to enter the deep, "
+        f"dark Swedish forest, {name}? (yes or no): "
+        )
     time.sleep(1)
     while are_you_ready.lower() not in ["yes", "no"]:
         are_you_ready = input("\nHmm... was that a yes or a no? ")
@@ -105,13 +114,14 @@ def first_question():
     time.sleep(1.5)
     
     # Displays the question and answers
+    print("Do you:")
+    time.sleep(1.5)
+    print("a) Follow the stream until you find a safer way to cross it")
+    time.sleep(1.5)
+    print("b) Cross the stream and hope it is as calm as it looks \n")
+    time.sleep(1.5)
+
     while True:
-        print("Do you:")
-        time.sleep(1.5)
-        print("a) Follow the stream until you find a safer way to cross it")
-        time.sleep(1.5)
-        print("b) Cross the stream and hope it is as calm as it looks \n")
-        time.sleep(1.5)
         your_answer = input("What do you do? (a or b): ")
         print("\n--------------------------------------")
 
@@ -139,11 +149,7 @@ def first_question():
         # If the player answers neither a or b they are promped to answer
         # the question again
         else:
-            while True:
-                print("Invalid choice. Please enter a or b.")
-                your_answer = input("What do you do? (a or b): ")
-                if your_answer.lower() == "a" or your_answer.lower() == "b":
-                    break
+            print("Invalid choice. Please enter a or b.")
             continue
 
 
@@ -195,15 +201,15 @@ def second_question():
             print("But you realise now... they are not people..they are...\n")
             time.sleep(1.5)
             print("TROLLS!\n")
-            print("     ▴▴▴▴    ")
-            print("  ☾=( ⚯ )=☽  ")
-            print(" /   \⎴ /   \ ")
-            print("/|     •    |\      ⺣")
-            print(" \_\   •   /_/     ⺣ ")
-            print("  |    /    |      ⺣ ⺣ ")
-            print("  |   ()    |      /^\\")
-            print("  \   \\\   /      //^\\\\")
-            print("   mmm   mmm     ///^\\\\\\")
+            print("      ▴▴▴▴    ")
+            print("   ☾=( ⚯ )=☽  ")
+            print(r" /    \⎴ /   \ ")
+            print(r" /|    •    |\      ⺣")
+            print(r" \_\   •   /_/     ⺣ ")
+            print(r"  |    /    |      ⺣ ⺣ ")
+            print("   |   ()    |      /^\\")
+            print(r"   \   \\\   /      //^\\")
+            print(r"   mmm   mmm     ///^\\\\")
             print("")
             time.sleep(1.5)
             print("They are having a barbecue, and you just served them "
