@@ -1,6 +1,7 @@
 import time
 
-from colorama import Fore, Back, Style
+from colorama import Fore
+
 
 def play_game():
     """
@@ -60,6 +61,7 @@ def play_game():
         time.sleep(1)
         restart_game()
         
+
 def first_question():
     """
     Presents the player with the first question, 
@@ -120,6 +122,7 @@ def first_question():
                     break
             continue
 
+
 def second_question():
     """
     Presents the player with the second question, 
@@ -128,23 +131,26 @@ def second_question():
     first_riddle, or it's game over.
     """
     print("\nYou follow the stream. After a while it narrows down enough "
-        "for you to jump over.\n")
+    "for you to jump over.\n")
     time.sleep(1.5)
-    print("When you have landed on the other side of the stream, you find a log to sit on.")
-    print("You need to catch your breath.\n")
+    print("When you have landed on the other side of the stream")
+    print("You find a log to sit on. You need to catch your breath.\n")
     time.sleep(1.5)
     print("But what's that sound?\n")
     time.sleep(1.5)
-    print("People! You can hear a faint laugther coming from inside the forest")
+    print("People! You can hear a faint laugther coming from inside the "
+    "forest")
     time.sleep(1.5)
-    print("You now notice a bonfire in the distance. Maybe they can help you?\n")
+    print("You now notice a bonfire in the distance."
+    "Maybe they can help you?\n")
     time.sleep(1.5)
 
     # Displays the question and answers
     while True:
         print("Do you:")
         time.sleep(1.5)
-        print("a) Approach the group of people and ask for directions out of the forest")
+        print("a) Approach the group of people and ask for directions out of "
+        "the forest")
         time.sleep(1.5)
         print("b) Stay away from them. You don't know who these people are\n")
         time.sleep(1.5)
@@ -175,13 +181,14 @@ def second_question():
             print("   mmm   mmm     ///^\\\\\\")
             print("")
             time.sleep(1.5)
-            print("They are having a barbecue, and you just served them dessert...\n")
+            print("They are having a barbecue, and you just served them "
+            "dessert...\n")
             game_over()
             time.sleep(1.5)
             restart_game()
             time.sleep(1.5)
             break
-        
+
         # If the player answers neither a or b they are promped to answer
         # the question again
         else: 
@@ -200,12 +207,14 @@ def first_riddle():
     second_riddle, or it's game over.
     """
 
+
 def second_riddle():
      """
     Presents the player with the second riddle. 
     Depedning on the answer the player eiter continues to 
     third_question, or it's game over.
     """
+
 
 def third_question():
     """
@@ -215,14 +224,17 @@ def third_question():
     final_question, or it's game over.
     """
 
+
 def final_question():
     """
     Presents the player with the final question. 
     The player now has three options: 
     Fight the giant, talk to the giant, or sneak past the giant. 
     Depedning on the answer it's either game over, 
-    win (player made it out of the forest) or player is taken back to first_riddle. 
+    game finished (player made it out of the forest) 
+    or player is taken back to first_riddle. 
     """
+
 
 def game_over():
     """
@@ -235,6 +247,7 @@ def game_over():
     print(Fore.RED + " #                    #")
     print(Fore.RED + " ######################")
     print(Style.RESET_ALL)
+
 
 def restart_game():
     """
