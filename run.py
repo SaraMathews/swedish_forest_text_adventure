@@ -2,6 +2,8 @@ import time
 
 from colorama import Fore
 
+global axe 
+axe = "no"
 
 def play_game():
     """
@@ -141,7 +143,7 @@ def second_question():
     print("People! You can hear a faint laugther coming from inside the "
     "forest")
     time.sleep(1.5)
-    print("You now notice a bonfire in the distance."
+    print("You now notice a bonfire in the distance. "
     "Maybe they can help you?\n")
     time.sleep(1.5)
 
@@ -155,12 +157,13 @@ def second_question():
         print("b) Stay away from them. You don't know who these people are\n")
         time.sleep(1.5)
         your_answer = input("What do you do? (a or b): ")
+        print("\n--------------------------------------")
 
         # If the player answers "a" the loop breaks and they continue 
         # to first_riddle
         if your_answer.lower() == "b":
             time.sleep(1.5)
-            first_riddle()
+            third_question()
             break
 
         # If the player answers "b" the loop breaks and it's game over
@@ -200,28 +203,54 @@ def second_question():
             continue
 
 
+def third_question():
+    print("\nGood choice! Trust no one.\n")
+    time.sleep(2)
+    print("It feels like you've been walking for hours")
+    time.sleep(1.5)
+    print("It's still dark, but the full moon lights up your way\n")
+    time.sleep(1.5)
+    print("Suddenly, you trip over something..\n")
+    time.sleep(1.5)
+    print("It's an axe!\n")
+    time.sleep(1.5)
+    print("Why is there an axe lying around in the middle of the forest..?\n")
+    time.sleep(2)
+    print("And who does it belongs to...?\n")
+    time.sleep(1.5)
+
+    while True:
+        global axe
+        axe = input("Do you take the axe with you? (yes or no): ")
+        if axe == "yes":
+            time.sleep(1.5)
+            print("\nThat's probably a smart move, considering what might be out there..\n")
+            first_riddle()
+            break
+        elif axe == "no":
+            time.sleep(1.5)
+            print("\nThat's probably a smart move, the owner of the axe will not be happy when he notices it's gone...\n")
+            first_riddle()
+            break
+        else: 
+            print("Invalid choice. Please enter yes or no.\n")
+            time.sleep(1)
+            continue
+
+
 def first_riddle():
      """
     Presents the player with the first riddle. 
-    Depedning on the answer the player eiter continues to 
-    second_riddle, or it's game over.
-    """
+     Depedning on the answer the player eiter continues to 
+     econd_riddle, or it's game over.
+     """
 
 
 def second_riddle():
-     """
+    """
     Presents the player with the second riddle. 
     Depedning on the answer the player eiter continues to 
     third_question, or it's game over.
-    """
-
-
-def third_question():
-    """
-    Presents the player with the third question,
-    to either trust the fairy or not.  
-    Depedning on the answer the player eiter continues to 
-    final_question, or it's game over.
     """
 
 
