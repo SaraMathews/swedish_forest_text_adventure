@@ -1,3 +1,7 @@
+import time
+
+from colorama import Fore, Back, Style
+
 def play_game():
     """
     Starts the adventure game with a welcome message.
