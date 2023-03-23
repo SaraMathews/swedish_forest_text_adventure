@@ -86,6 +86,7 @@ def first_question():
         print("b) Cross the stream and hope it is as calm as it looks \n")
         time.sleep(1.5)
         your_answer = input("What do you do? (a or b): ")
+        print("\n--------------------------------------")
 
         if your_answer.lower() == "a":
             time.sleep(1.5)
@@ -106,7 +107,11 @@ def first_question():
             break
 
         else: 
-            print("Invalid choice. Please enter a or b.")
+            while True:
+                print("Invalid choice. Please enter a or b.")
+                your_answer = input("What do you do? (a or b): ")
+                if your_answer.lower() == "a" or your_answer.lower() == "b":
+                    break
             continue
 
 def second_question():
@@ -116,8 +121,64 @@ def second_question():
     Depedning on the answer the player eiter continues to 
     first_riddle, or it's game over.
     """
-    print("You follow the stream. After a while it narrows down enough "
-        "for you to jump over.")
+    print("\nYou follow the stream. After a while it narrows down enough "
+        "for you to jump over.\n")
+    time.sleep(1.5)
+    print("When you have landed on the other side of the stream, you find a log to sit on.")
+    print("You need to catch your breath.\n")
+    time.sleep(1.5)
+    print("But what's that sound?\n")
+    time.sleep(1.5)
+    print("People! You can hear a faint laugther coming from inside the forest")
+    time.sleep(1.5)
+    print("You now notice a bonfire in the distance. Maybe they can help you?\n")
+    time.sleep(1.5)
+    
+    while True:
+        print("Do you:")
+        time.sleep(1.5)
+        print("a) Approach the group of people and ask for directions out of the forest")
+        time.sleep(1.5)
+        print("b) Stay away from them. You don't know who these people are\n")
+        time.sleep(1.5)
+        your_answer = input("What do you do? (a or b): ")
+
+        if your_answer.lower() == "b":
+            time.sleep(1.5)
+            first_riddle()
+            break
+
+        elif your_answer.lower() == "a":
+            print("\nYou approach the group of people.\n")
+            time.sleep(1.5)
+            print("But you realise now... they are not people..they are...\n")
+            time.sleep(1.5)
+            print("TROLLS!\n")
+            print("     ▴▴▴▴    ")
+            print("  ☾=( ⚯ )=☽  ")
+            print(" /   \⎴ /   \ ")
+            print("/|     •    |\      ⺣")
+            print(" \_\   •   /_/     ⺣ ")
+            print("  |    /    |      ⺣ ⺣ ")
+            print("  |   ()    |      /^\\")
+            print("  \   \\\   /      //^\\\\")
+            print("   mmm   mmm     ///^\\\\\\")
+            print("")
+            time.sleep(1.5)
+            print("They are having a barbecue, and you just served them dessert...\n")
+            game_over()
+            time.sleep(1.5)
+            restart_game()
+            time.sleep(1.5)
+            break
+
+        else: 
+            while True:
+                print("Invalid choice. Please enter a or b.")
+                your_answer = input("What do you do? (a or b): ")
+                if your_answer.lower() == "a" or your_answer.lower() == "b":
+                    break
+            continue
 
 
 def first_riddle():
@@ -187,57 +248,3 @@ def restart_game():
         exit()
 
 play_game()
-
-
-
-
-def first_question():
-    """
-    Presents the player with the first question, 
-    to either cross the stream or follow the stream.
-    Depedning on the answer the player eiter continues to 
-    second_question, or it's game over.
-    """
-    print("You try to stand up...")
-    time.sleep(1.5)
-    print("Your head is spinning.")
-    time.sleep(1.5)
-    print("But you need to get going.\n")
-    time.sleep(1.5)
-    print("You stumble through the forest until you reach a small stream.")
-    time.sleep(1.5)
-    print("It looks calm.\n")
-    time.sleep(1.5)
-    print("Do you:")
-    time.sleep(1.5)
-    print("a) Follow the stream until you find a safer way to cross it")
-    time.sleep(1.5)
-    print("b) Cross the stream and hope it is as calm as it looks \n")
-    time.sleep(1.5)
-    your_answer = input("What do you do? (a or b): ")
-
-    # If the player answers a, the game continues with the second question 
-    if your_answer.lower() == "a":
-        time.sleep(1.5)
-        second_question()
-
-    # If the player answers b, 
-    # the game over and restart game functions are called
-    
-    elif your_answer.lower() == "b":
-        time.sleep(1.5)
-        print("\nYou attempt to cross the stream.\n")
-        time.sleep(1.5)
-        print("But oh no! Quicksand!\n")
-        time.sleep(1.5)
-        print("It drags you down and you drown.\n")
-        time.sleep(1.5)
-        game_over()
-        time.sleep(1.5)
-        restart_game()
-        time.sleep(1.5)
-
-    # If the player answeres neither a or b, 
-    # they will be asked to enter a valid answer
-    else: 
-        print("Invalid choice. Please enter a or b.")
