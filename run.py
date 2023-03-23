@@ -6,8 +6,23 @@ def play_game():
     """
     Starts the adventure game with a welcome message.
     Lets the player choose a character name.
+    Asks the player if they are ready to play the game.
     Introduces the conditions before displaying the first question.
     """
+    print("This is the Swedish Forest Text Adventure Game")
+
+    # Character name must be chosen before continuing 
+    print("Welcome brave adventurer!")
+    character_names = ["Bjorn", "Ragnar", "Hilda"]
+    name = input(f"Choose one of the following character names: {','.join(character_names)}:")
+    while name not in character_names:
+        print("That's not one of the options. Please try again")
+        name = input(f"Choose one of the following character names: {','.join(character_names)}:")
+    
+    # Asks the player if they are ready. They must enter yes or no
+    are_you_ready = input(f"Are you ready to enter the deep, dark Swedish forest, {name}? (yes/no):")
+    while are_you_ready.lower() not in ["yes", "no"]:
+        are_you_ready = input("Hmm... was that a yes or a no?")
 
 def first_question():
     """
@@ -61,3 +76,5 @@ def restart_game():
     Displays a Game Over box and lets the player choose to either restart 
     the game or exit.  
     """
+
+play_game()
