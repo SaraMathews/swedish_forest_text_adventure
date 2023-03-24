@@ -23,6 +23,11 @@ riddles = {
                       "It comes out first and follows after,\n"
                       "Ends life, kills laughter.\n",
             "answers": ["darkness", "shadows"]
+        },
+        "Third riddle": {
+            "riddle": "A box without hinges, key, or lid,\n"
+                      "Yet golden treasure inside is hid.\n",
+            "answers": ["sun", "egg"]
         }
     }
 
@@ -203,12 +208,12 @@ def second_question():
             print("TROLLS!\n")
             print("      ▴▴▴▴    ")
             print("   ☾=( ⚯ )=☽  ")
-            print(r" /    \⎴ /   \ ")
+            print(r" /    \⎴ /  \ ")
             print(r" /|    •    |\      ⺣")
             print(r" \_\   •   /_/     ⺣ ")
             print(r"  |    /    |      ⺣ ⺣ ")
-            print(r"   |   ()    |      /^\\")
-            print(r"   \   \\\   /      //^\\")
+            print(r"   |   ()   |      /^\\")
+            print(r"   \   \\\  /     //^\\")
             print(r"   mmm   mmm     ///^\\\\")
             print("")
             time.sleep(1.5)
@@ -375,11 +380,11 @@ def final_question():
             break
         
         elif your_answer.lower() == "a":
-            if axe == "yes":
+            if axe == "no":
                 print("You win!")
                 restart_game()
             else:
-                if axe == "no":
+                if axe == "yes":
                     third_riddle()
             break
 
@@ -390,14 +395,14 @@ def final_question():
 
 def third_riddle():
     """
-    If the player answers c) on the final question and axe == no,
+    If the player answers a) on the final question and axe == yes,
     they will be presented with the third riddle.
     Depedning on the answer the player eiter continues to
     final_question, or it's game over.
     """
     while True:
         print(riddles["Third riddle"]["riddle"])
-        your_answer = input("What's your answer, buildnings or mountains?")
+        your_answer = input("What's your answer, sun or egg?")
 
         if your_answer in riddles["Third riddle"]["answers"][1]:
             print("Right answer.")
@@ -409,7 +414,7 @@ def third_riddle():
             restart_game()
             break
         else: 
-            print("Invalid answer. Please choose between darkness or shadows\n")
+            print("Invalid answer. Please choose between sun or egg\n")
             time.sleep(1)
             continue
 
@@ -429,8 +434,8 @@ def game_over():
 
 def restart_game():
     """
-    Is called every time the player answers a question/riddle wrong. 
-    Lets the player choose to either restart the game or exit.  
+    Is called every time the player answers a question/riddle wrong.
+    Lets the player choose to either restart the game or exit.
     """
     restart_game = input("Do you want to restart the game? (yes or no): ")
     while restart_game.lower() not in ["yes", "no"]:
@@ -443,11 +448,11 @@ def restart_game():
     else:
         time.sleep(1)
         print("")
-        print(Fore.RED + " ######################")
-        print(Fore.RED + " #                    #")
-        print(Fore.RED + " #      BYE THEN!     #")
-        print(Fore.RED + " #                    #")
-        print(Fore.RED + " ######################")
+        print(Fore.BLUE + " ######################")
+        print(Fore.BLUE + " #                    #")
+        print(Fore.BLUE + " #      BYE BYE!      #")
+        print(Fore.BLUE + " #                    #")
+        print(Fore.BLUE + " ######################")
         print(Style.RESET_ALL)
 
 
