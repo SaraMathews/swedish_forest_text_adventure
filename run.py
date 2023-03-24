@@ -302,6 +302,19 @@ def first_riddle():
     print("He just found his missing gold ring\n")
     print("So he's giving you a fair chance to answer his riddles")
     print("Think carefully... \n")
+    
+    timer = 10
+    while timer > 0:
+        print(f"You have {timer} seconds remaining")
+        time.sleep(1)
+        timer -= 1
+        
+        if timer == 0:
+            print("Times up")
+            game_over()
+            restart_game()
+            return
+    
     while True:
         print(riddles["First riddle"]["riddle"])
         your_answer = input("What's your answer, time or wind?")
