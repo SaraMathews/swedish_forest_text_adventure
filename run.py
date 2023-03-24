@@ -332,7 +332,7 @@ def second_riddle():
             print("You are vey good at riddles.")
             print("yess..yess my precious, very good..")
             print("Gollum lets you go")
-            final_question()()
+            final_question()
             break
         elif your_answer == riddles["Second riddle"]["answers"][1]:
             print("Wrong answer...")
@@ -349,12 +349,43 @@ def second_riddle():
 def final_question():
     """
     Presents the player with the final question.
-    The player now has three options:
-    Fight the giant, talk to the giant, or sneak past the giant.
-    Depedning on the answer it's either game over,
-    game finished (player made it out of the forest)
-    or player is taken back to first_riddle.
+    The player now has three options.b
+    Option a) is game over
+    Option b) is victory, the player makes it out of the forest
+    Option c) has two outcomes. Depending on if they picked up 
+    the axe or not. If they picked up the axe, they are takem back to 
+    Gollum to answer a third riddle. If they didn't pick up the axe it's
+    victory the player makes it out of the forest
     """
+    while True:
+        your_answer = input("What do you do? (a, b or c): ")
+        print("\n--------------------------------------")
+
+        if your_answer.lower() == "b":
+            time.sleep(1.5)
+            print("You win!")
+            restart_game()
+            break
+
+        elif your_answer.lower() == "c":
+            game_over()
+            time.sleep(1.5)
+            restart_game()
+            time.sleep(1.5)
+            break
+        
+        elif your_answer.lower() == "a":
+            if axe == "yes":
+                print("You win!")
+                restart_game()
+            else:
+                if axe == "no":
+                    third_riddle()
+            break
+
+        else:
+            print("Invalid choice. Please enter a, b or c.")
+            continue
 
 
 def third_riddle():
@@ -368,14 +399,11 @@ def third_riddle():
         print(riddles["Third riddle"]["riddle"])
         your_answer = input("What's your answer, buildnings or mountains?")
 
-        if your_answer in riddles["Third riddle"]["answers"][0]:
-            print("Right answer...")
-            print("You are vey good at riddles.")
-            print("yess..yess my precious, very good..")
-            print("Gollum lets you go")
-            final_question()()
+        if your_answer in riddles["Third riddle"]["answers"][1]:
+            print("Right answer.")
+            final_question()
             break
-        elif your_answer == riddles["Second riddle"]["answers"][1]:
+        elif your_answer == riddles["Third riddle"]["answers"][0]:
             print("Wrong answer...")
             game_over()
             restart_game()
