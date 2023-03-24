@@ -22,7 +22,7 @@ riddles = {
                       "And empty holes it fills.\n"
                       "It comes out first and follows after,\n"
                       "Ends life, kills laughter.\n",
-            "answers": ["dark", "shadow"]
+            "answers": ["darkness", "shadows"]
         }
     }
 
@@ -207,7 +207,7 @@ def second_question():
             print(r" /|    •    |\      ⺣")
             print(r" \_\   •   /_/     ⺣ ")
             print(r"  |    /    |      ⺣ ⺣ ")
-            print("   |   ()    |      /^\\")
+            print(r"   |   ()    |      /^\\")
             print(r"   \   \\\   /      //^\\")
             print(r"   mmm   mmm     ///^\\\\")
             print("")
@@ -292,26 +292,26 @@ def first_riddle():
     print("#     BOOO     #")
     print("#              #")
     print("################")
-    print("Gollum won't let you go until you've answered both of his riddles\n")
-    print("But he's in a good mood today..")
+    print("Gollum won't let you go until you've played a game of riddles\n")
+    print("But he's in a good mood..")
     print("He just found his missing gold ring\n")
     print("So he's giving you a fair chance to answer his riddles")
     print("Think carefully... \n")
     while True:
         print(riddles["First riddle"]["riddle"])
-        your_answer = input("What is it, time or wind?")
+        your_answer = input("What's your answer, time or wind?")
 
         if your_answer in riddles["First riddle"]["answers"][0]:
-            print("Correct!")
-            print("One riddle left...")
+            print("Right answer.")
+            print("Next riddle...")
             second_riddle()
             break
         elif your_answer == riddles["First riddle"]["answers"][1]:
-            print("Wrong answer...")
+            print("Wrong answer.")
             game_over()
             restart_game()
             break
-        else: 
+        else:
             print("Invalid answer. Please choose between time or wind.\n")
             time.sleep(1)
             continue
@@ -323,6 +323,27 @@ def second_riddle():
     Depedning on the answer the player eiter continues to
     third_question, or it's game over.
     """
+    while True:
+        print(riddles["Second riddle"]["riddle"])
+        your_answer = input("What's your answer, darkness or shadows?")
+
+        if your_answer in riddles["Second riddle"]["answers"][0]:
+            print("Right answer...")
+            print("You are vey good at riddles.")
+            print("yess..yess my precious, very good..")
+            print("Gollum lets you go")
+            final_question()()
+            break
+        elif your_answer == riddles["Second riddle"]["answers"][1]:
+            print("Wrong answer...")
+            game_over()
+            restart_game()
+            break
+        else:
+            print("Invalid answer. Please choose between darkness "
+                  "or shadows\n")
+            time.sleep(1)
+            continue
 
 
 def final_question():
@@ -334,6 +355,35 @@ def final_question():
     game finished (player made it out of the forest)
     or player is taken back to first_riddle.
     """
+
+
+def third_riddle():
+    """
+    If the player answers c) on the final question and axe == no,
+    they will be presented with the third riddle.
+    Depedning on the answer the player eiter continues to
+    final_question, or it's game over.
+    """
+    while True:
+        print(riddles["Third riddle"]["riddle"])
+        your_answer = input("What's your answer, buildnings or mountains?")
+
+        if your_answer in riddles["Third riddle"]["answers"][0]:
+            print("Right answer...")
+            print("You are vey good at riddles.")
+            print("yess..yess my precious, very good..")
+            print("Gollum lets you go")
+            final_question()()
+            break
+        elif your_answer == riddles["Second riddle"]["answers"][1]:
+            print("Wrong answer...")
+            game_over()
+            restart_game()
+            break
+        else: 
+            print("Invalid answer. Please choose between darkness or shadows\n")
+            time.sleep(1)
+            continue
 
 
 def game_over():
@@ -365,12 +415,12 @@ def restart_game():
     else:
         time.sleep(1)
         print("")
-        print("Bye then!")
-        print("        /\\_/\\   ")
-        print("  ____/ o o  \\  ")
-        print("  /~____   \"  ) ")
-        print("(_____\/    / \n") 
-        exit()
+        print(Fore.RED + " ######################")
+        print(Fore.RED + " #                    #")
+        print(Fore.RED + " #      BYE THEN!     #")
+        print(Fore.RED + " #                    #")
+        print(Fore.RED + " ######################")
+        print(Style.RESET_ALL)
 
 
 play_game()
