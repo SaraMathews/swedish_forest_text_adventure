@@ -2,9 +2,12 @@ import time
 
 from colorama import Fore, Style
 
+# Global variable
 global axe 
 axe = "no"
 
+# The riddles dictionary contains three items, each of which is another
+# dictionary representing a riddle.
 riddles = {
         "First riddle": {
             "riddle": "This thing all things devours;\n"
@@ -91,7 +94,7 @@ def play_game():
         time.sleep(2)
         first_question()
 
-    # If the player answers no, 
+    # If the player answers no,
     # the game over and restart game functions are called
     else: 
         print("\nIt's game over before it even begins!\n")
@@ -118,13 +121,13 @@ def first_question():
     print("It looks calm.\n")
     time.sleep(1.5)
     
-    # Displays the question and answers
+    # Displays the question and  possible answers
     print("Do you:")
     time.sleep(1.5)
     print("a) Follow the stream until you find a safer way to cross it")
     time.sleep(1.5)
     print("b) Cross the stream and hope it is as calm as it looks \n")
-    time.sleep(1.5)
+    time.sleep(1)
 
     while True:
         your_answer = input("What do you do? (a or b):\n")
@@ -189,7 +192,7 @@ def second_question():
               "the forest")
         time.sleep(1.5)
         print("b) Stay away from them. You don't know who these people are\n")
-        time.sleep(1.5)
+        time.sleep(1)
         your_answer = input("What do you do? (a or b):\n")
         time.sleep(1)
         print("\n--------------------------------------")
@@ -291,6 +294,7 @@ def first_riddle():
     Depedning on the answer the player eiter continues to
     second_riddle, or it's game over.
     """
+
     print("You're thirsty and tired.")
     time.sleep(1.5)
     print("After a while you decide you need a rest. \n")
@@ -317,17 +321,19 @@ def first_riddle():
     time.sleep(1.5)
     print("So think carefully.\n")
     time.sleep(2)
+
+    # Displays the first riddle and possible answers
     print(riddles["First riddle"]["riddle"])
     time.sleep(7)
-    print("Choose between the following: " + riddles["First riddle"]["answers"][0] + " or " + riddles["First riddle"]["answers"][1])    
-    time.sleep(3)  
-    your_answer = input("What's your answer?")
+    print("Choose between the following: " + riddles["First riddle"]["answers"][0] + " or " + riddles["First riddle"]["answers"][1]) 
     time.sleep(1)
+    your_answer = input("What's your answer?\n")
     print("\n--------------------------------------\n")
     time.sleep(1.5)
 
     while True:
-
+        # If the player answers "time" the loop breaks and they continue
+        # to second_riddle
         if your_answer in riddles["First riddle"]["answers"][0]:
             print("Right answer.\n")
             time.sleep(1.5)
@@ -335,12 +341,15 @@ def first_riddle():
             time.sleep(2)
             second_riddle()
             break
+        # If the player answers "wind" the loop breaks and it's game over
         elif your_answer == riddles["First riddle"]["answers"][1]:
             print("Wrong answer.")
             time.sleep(1.5)
             game_over()
             restart_game()
             break
+        # If the player answers neither time or wind they are promped to answer
+        # the question again
         else:
             print("Invalid answer. Please choose between time or wind.\n")
             time.sleep(1)
@@ -353,17 +362,18 @@ def second_riddle():
     Depedning on the answer the player eiter continues to
     third_question, or it's game over.
     """
+    # Displays the second riddle and possible answers
     print(riddles["Second riddle"]["riddle"])
     time.sleep(7)
-    print("Choose between the following: " + riddles["Second riddle"]["answers"][0] + " or " + riddles["Second riddle"]["answers"][1]) 
-    time.sleep(3)
+    print("Choose between the following: " + riddles["Second riddle"]["answers"][0] + " or " + riddles["Second riddle"]["answers"][1])
     your_answer = input("What's your answer?\n")
     time.sleep(1)
     print("\n--------------------------------------\n")
     time.sleep(1.5)
 
     while True:
-
+        # If the player answers "darkness" the loop breaks and they continue
+        # to final_question
         if your_answer in riddles["Second riddle"]["answers"][0]:
             print("Right answer.\n")
             time.sleep(1.5)
@@ -371,17 +381,20 @@ def second_riddle():
             time.sleep(1.5)
             print("yess..yess my precious, very good..\n")
             time.sleep(1.5)
-            print("Gollum lets you g.o")
+            print("Gollum lets you go")
             time.sleep(1.5)
             print("\n--------------------------------------\n")
             final_question()
             break
+        # If the player answers "shadow" the loop breaks and it's game over
         elif your_answer == riddles["Second riddle"]["answers"][1]:
             print("Wrong answer.")
             time.sleep(1.5)
             game_over()
             restart_game()
             break
+        # If the player answers neither darkness or wind they are promped to 
+        # answer the question again
         else:
             print("Invalid answer. Please choose between darkness "
                   "or shadows\n")
@@ -395,8 +408,8 @@ def final_question():
     The player now has three options.b
     Option a) is game over
     Option b) is victory, the player makes it out of the forest
-    Option c) has two outcomes. Depending on if they picked up 
-    the axe or not. If they picked up the axe, they are takem back to 
+    Option c) has two outcomes. Depending on if they picked up
+    the axe or not. If they picked up the axe, they are takem back to
     Gollum to answer a third riddle. If they didn't pick up the axe it's
     victory the player makes it out of the forest
     """
@@ -441,7 +454,6 @@ def third_riddle():
     print(riddles["Third riddle"]["riddle"])
     time.sleep(5)
     print("Choose between the following: " + riddles["Third riddle"]["answers"][0] + " or " + riddles["Third riddle"]["answers"][1]) 
-    time.sleep(2)
     your_answer = input("What's your answer?\n")
     print("\n--------------------------------------")
     time.sleep(1)
@@ -460,7 +472,7 @@ def third_riddle():
             game_over()
             restart_game()
             break
-        else: 
+        else:
             print("Invalid answer. Please choose between sun or egg\n")
             time.sleep(1)
             continue
