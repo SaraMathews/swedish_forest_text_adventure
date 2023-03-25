@@ -1,4 +1,5 @@
 import time
+import random
 
 from colorama import Fore, Style
 
@@ -260,11 +261,12 @@ def third_question():
     time.sleep(1.5)
 
     # Displays the third question. Both answers leads to first_riddle
+    global axe
+    axe = input("Do you take the axe with you? (yes or no): \n")
+    time.sleep(1)
+    print("\n--------------------------------------")
+    
     while True:
-        global axe
-        axe = input("Do you take the axe with you? (yes or no): \n")
-        time.sleep(1)
-        print("\n--------------------------------------")
         if axe == "yes":
             time.sleep(1.5)
             print("\nThat's probably a smart move, considering what "
@@ -439,7 +441,7 @@ def final_question():
     print("\n--------------------------------------")
 
     while True:
-        # If the player answers "b" the loop breaks and they 
+        # If the player answers "b" the loop breaks and they
         # finish the game
         if your_answer.lower() == "b":
             time.sleep(1.5)
@@ -529,7 +531,6 @@ def third_riddle():
     Depedning on the answer the player eiter continues to
     final_question, or it's game over.
     """
-    # Displays the third riddle and possible answers
     print("You wake up with a terrible headache.")
     print("You're back at the lake.")
     print("How did you get here?")
@@ -539,6 +540,7 @@ def third_riddle():
     print("And just like earlier he won't let you go")
     print("unless you answer correctly")
     print("Third riddle goes as follows:")
+
     # Displays the third riddle and possible answers
     print(riddles["Third riddle"]["riddle"])
     time.sleep(5)
@@ -552,6 +554,7 @@ def third_riddle():
         # to final_question
         if your_answer in riddles["Third riddle"]["answers"][1]:
             print("Right answer.\n")
+            print("You're free to go, again.")
             time.sleep(1.5)
             second_final_question()
             break
@@ -578,56 +581,21 @@ def second_final_question():
     game over
     """
     # Displays the question and answers
-    print("Do you:")
-    time.sleep(1)
-    print("a) Approach the dwarf and ask why he's upset.")
-    time.sleep(1)
-    print("b) Rätt svar oavsett")
-    time.sleep(1)
-    your_answer = input("What do you do? (a or b):\n")
-    time.sleep(1)
-    print("\n--------------------------------------")
+    print("A coin you toss,")
+    print("A chance you take,")
+    print("Heads or tails,")
+    print("Which path will fate make?")
+    print("\n--------------------------------------") 
 
-    while True:
-        # If the player answers "b" the loop breaks and they 
-        # finish the game
-        if your_answer.lower() == "b":
-            time.sleep(1.5)
-            print(Fore.GREEN + "\n######################")
-            print(Fore.GREEN + " #                    #")
-            print(Fore.GREEN + " #      VICTORY!      #")
-            print(Fore.GREEN + " #                    #")
-            print(Fore.GREEN + " ######################\n")
-            print(Style.RESET_ALL)
-            restart_game()
-            break
-
-        # If the player answers "c" the loop breaks and it's game over
-        elif your_answer.lower() == "c":
-            print("You sneak past the dawrf.")
-            time.sleep(1.5)
-            print("Keeping a close eye on him the whole time.\n")
-            time.sleep(1.5)
-            print("You're so focused on not being spotted.")
-            time.sleep(1.5)
-            print("That you don't notice the cliff you're slowly "
-                  "heading towards\n")
-            time.sleep(2)
-            print("And down you fall, to a certain death.\n")
-            time.sleep(1.5)
-            game_over()
-            time.sleep(1.5)
-            restart_game()
-            time.sleep(1.5)
-            break
-        else:
-            print("Invalid answer. Please choose between sun or egg\n")
-            time.sleep(1)
-            continue
-  
-
-  
-
+    time.sleep(1.5)
+    print(Fore.GREEN + "\n######################")
+    print(Fore.GREEN + " #                    #")
+    print(Fore.GREEN + " #      VICTORY!      #")
+    print(Fore.GREEN + " #                    #")
+    print(Fore.GREEN + " ######################\n")
+    print(Style.RESET_ALL)
+    restart_game()
+           
 
 def game_over():
     """
@@ -668,4 +636,3 @@ def restart_game():
 
 
 play_game()
-first_question()
