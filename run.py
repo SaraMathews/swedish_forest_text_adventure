@@ -128,7 +128,7 @@ def first_question():
 
     while True:
         your_answer = input("What do you do? (a or b):\n")
-        time.sleep(1.5)
+        time.sleep(1)
         print("\n--------------------------------------")
 
         # If the player answers "a" the loop breaks and they continue
@@ -171,7 +171,7 @@ def second_question():
     time.sleep(1.5)
     print("When you have landed on the other side of the stream,")
     print("you find a log to sit on. You need to catch your breath.\n")
-    time.sleep(1.5)
+    time.sleep(2.5)
     print("But what's that sound?\n")
     time.sleep(1.5)
     print("People! You can hear a faint laugther coming from inside the "
@@ -191,7 +191,7 @@ def second_question():
         print("b) Stay away from them. You don't know who these people are\n")
         time.sleep(1.5)
         your_answer = input("What do you do? (a or b):\n")
-        time.sleep(1.5)
+        time.sleep(1)
         print("\n--------------------------------------")
 
         # If the player answers "a" the loop breaks and they continue
@@ -264,7 +264,7 @@ def third_question():
     while True:
         global axe
         axe = input("Do you take the axe with you? (yes or no): \n")
-        time.sleep(1.5)
+        time.sleep(1)
         print("\n--------------------------------------")
         if axe == "yes":
             time.sleep(1.5)
@@ -322,7 +322,7 @@ def first_riddle():
     print("Choose between the following: " + riddles["First riddle"]["answers"][0] + " or " + riddles["First riddle"]["answers"][1])    
     time.sleep(3)  
     your_answer = input("What's your answer?")
-    time.sleep(1.5)
+    time.sleep(1)
     print("\n--------------------------------------\n")
     time.sleep(1.5)
 
@@ -358,7 +358,7 @@ def second_riddle():
     print("Choose between the following: " + riddles["Second riddle"]["answers"][0] + " or " + riddles["Second riddle"]["answers"][1]) 
     time.sleep(3)
     your_answer = input("What's your answer?\n")
-    time.sleep(1.5)
+    time.sleep(1)
     print("\n--------------------------------------\n")
     time.sleep(1.5)
 
@@ -439,13 +439,12 @@ def third_riddle():
     final_question, or it's game over.
     """
     print(riddles["Third riddle"]["riddle"])
-    print("")
-    time.sleep(2)
+    time.sleep(5)
     print("Choose between the following: " + riddles["Third riddle"]["answers"][0] + " or " + riddles["Third riddle"]["answers"][1]) 
     time.sleep(2)
     your_answer = input("What's your answer?\n")
     print("\n--------------------------------------")
-    time.sleep(1.5)
+    time.sleep(1)
 
     while True:
         your_answer = input("What's your answer, sun or egg?")
