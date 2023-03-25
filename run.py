@@ -274,7 +274,7 @@ def third_question():
                   "not be happy when he notices it's gone...\n")
             first_riddle()
             break
-        else: 
+        else:
             print("Invalid choice. Please enter yes or no.\n")
             time.sleep(1)
             continue
@@ -287,37 +287,36 @@ def first_riddle():
     second_riddle, or it's game over.
     """
     print("You're thirsty...and tired.")
-    print("After a while you decide you need a rest")
-    print("And look over there!")
-    print("A small lake")
-    print("You spash your face with water and have a drink")
-    print("You don't notice the creature Gollum sneaking up behind you..")
+    time.sleep(1.5)
+    print("After a while you decide you need a rest. \n")
+    time.sleep(1.5)
+    print("You reach a small lake.")
+    time.sleep(1.5)
+    print("You spash your face with water and have a drink. \n")
+    time.sleep(1.5)
+    print("You don't notice the creature Gollum sneaking up behind you..\n")
+    time.sleep(2)
     print("################")
     print("#              #")
     print("#     BOOO     #")
     print("#              #")
-    print("################")
-    print("Gollum won't let you go until you've played a game of riddles\n")
-    print("But he's in a good mood..")
-    print("He just found his missing gold ring\n")
-    print("So he's giving you a fair chance to answer his riddles")
-    print("Think carefully... \n")
-    
-    timer = 10
-    while timer > 0:
-        print(f"You have {timer} seconds remaining")
-        time.sleep(1)
-        timer -= 1
-        
-        if timer == 0:
-            print("Times up")
-            game_over()
-            restart_game()
-            return
-    
+    print("################\n")
+    time.sleep(1.5)
+    print("Gollum won't let you go until you've played a game of riddles.\n")
+    print("But he's in a good mood.")
+    print("He just found his missing gold ring.\n")
+    time.sleep(1.5)
+    print("He's giving you a fair chance to answer his riddles.\n")
+    print("But you will only have 10 seconds to choose an answer...")
+    time.sleep(1.5)
+    print("So think carefully...\n")
+    time.sleep(1.5)
+    print(riddles["First riddle"]["riddle"])
+    print("")
+    print("Choose between the following: " + riddles["First riddle"]["answers"][0] + "or" + riddles["First riddle"]["answers"][1])      
+    your_answer = input("What's your answer?\n")
+
     while True:
-        print(riddles["First riddle"]["riddle"])
-        your_answer = input("What's your answer, time or wind?")
 
         if your_answer in riddles["First riddle"]["answers"][0]:
             print("Right answer.")
