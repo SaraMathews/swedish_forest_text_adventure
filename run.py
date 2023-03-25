@@ -280,6 +280,7 @@ def third_question():
             time.sleep(1.5)
             print("\nThat's probably a smart move, the owner of the axe will "
                   "not be happy when he notices it's gone.\n")
+            time.sleep(1.5)
             first_riddle()
             break
         else:
@@ -326,7 +327,6 @@ def first_riddle():
     print(riddles["First riddle"]["riddle"])
     time.sleep(7)
     print("Choose between the following: " + riddles["First riddle"]["answers"][0] + " or " + riddles["First riddle"]["answers"][1]) 
-    time.sleep(1)
     your_answer = input("What's your answer?\n")
     print("\n--------------------------------------\n")
     time.sleep(1.5)
@@ -375,13 +375,13 @@ def second_riddle():
         # If the player answers "darkness" the loop breaks and they continue
         # to final_question
         if your_answer in riddles["Second riddle"]["answers"][0]:
-            print("Right answer.\n")
+            print("Right answer.")
             time.sleep(1.5)
             print("You are vey good at riddles.\n")
             time.sleep(1.5)
             print("yess..yess my precious, very good..\n")
             time.sleep(1.5)
-            print("Gollum lets you go")
+            print("Gollum lets you go.")
             time.sleep(1.5)
             print("\n--------------------------------------\n")
             final_question()
@@ -405,25 +405,66 @@ def second_riddle():
 def final_question():
     """
     Presents the player with the final question.
-    The player now has three options.b
+    The player now has three options.
     Option a) is game over
     Option b) is victory, the player makes it out of the forest
     Option c) has two outcomes. Depending on if they picked up
-    the axe or not. If they picked up the axe, they are takem back to
+    the axe or not. If they picked up the axe, they are taken back to
     Gollum to answer a third riddle. If they didn't pick up the axe it's
-    victory the player makes it out of the forest
+    victory, the player makes it out of the forest
     """
-    while True:
-        your_answer = input("What do you do? (a, b or c): ")
-        print("\n--------------------------------------\n")
+    print("You don't have much energy left.")
+    time.sleep(1.5)
+    print("Will you ever find your way out?\n")
+    time.sleep(1.5)
+    print("You can hear something...")
+    time.sleep(1.5)
+    print("Who's that? \n")
+    time.sleep(1.5)
+    print("It's a dwarf, sitting on a rock further ahead. He's crying.")
+    time.sleep(1.5)
+    print("I wonder why..?\n")
+    print("What do you do now? You have to choose wisely. \n")
+    time.sleep(1.5)
+    print("Your life might depend on it...\n")
+    time.sleep(1.5)
 
+    print("Do you:")
+    time.sleep(1)
+    print("a) Approach the dwarf and ask why he's upset.")
+    time.sleep(1)
+    print("b) Rätt svar oavsett")
+    time.sleep(1)
+    print("b) Sneak past the dwarf and hope he doesn't notice you.\n")
+    time.sleep(1)
+    your_answer = input("What do you do? (a, b or c):\n")
+    time.sleep(1)
+    print("\n--------------------------------------")
+
+    while True:
         if your_answer.lower() == "b":
             time.sleep(1.5)
-            print("You win!")
+            print(Fore.GREEN + "\n######################")
+            print(Fore.GREEN + " #                    #")
+            print(Fore.GREEN + " #      VICTORY!      #")
+            print(Fore.GREEN + " #                    #")
+            print(Fore.GREEN + " ######################\n")
+            print(Style.RESET_ALL)
             restart_game()
             break
 
         elif your_answer.lower() == "c":
+            print("You sneak past the dawrf.")
+            time.sleep(1.5)
+            print("Keeping a close eye on him the whole time.\n")
+            time.sleep(1.5)
+            print("You're so focused on not being spotted.")
+            time.sleep(1.5)
+            print("That you don't notice the cliff you're slowly "
+                  "heading towards\n")
+            time.sleep(2)
+            print("And down you fall, to a certain death.\n")
+            time.sleep(1.5)
             game_over()
             time.sleep(1.5)
             restart_game()
@@ -432,10 +473,42 @@ def final_question():
         
         elif your_answer.lower() == "a":
             if axe == "no":
-                print("You win!")
+                print("\nYou walk over to the crying dwarf.")
+                time.sleep(1.5)
+                print("He tells you he's lost his axe\n")
+                time.sleep(1.5)
+                print("He lights up when you tell him you've seen it!")
+                time.sleep(1.5)
+                print("You point him in the right direction.")
+                time.sleep(1.5)
+                print("He's forever thankful.\n")
+                time.sleep(1.5)
+                print("He offers you his map to help you find your way out.")
+                print("With the map in you hand, you're out of the forest in "
+                      "no time!")
+                time.sleep(2.5)
+                print(Fore.GREEN + " \n######################")
+                print(Fore.GREEN + " #                    #")
+                print(Fore.GREEN + " #      VICTORY!      #")
+                print(Fore.GREEN + " #                    #")
+                print(Fore.GREEN + " ######################\n")
+                print(Style.RESET_ALL)
                 restart_game()
             else:
                 if axe == "yes":
+                    print("\nYou walk towards to the crying dwarf")
+                    time.sleep(1.5)
+                    print("He sees you holding his missing axe!\n")
+                    time.sleep(1.5)
+                    print("He yells!\n")
+                    time.sleep(1.5)
+                    print("THIEF!\n")
+                    time.sleep(1.5)
+                    print("Before you have time to react, the dwarfs throws a "
+                          "rock at you.\n")
+                    time.sleep(1.5)
+                    print("It hits you right between the eyes.\n")
+                    time.sleep(1.5)
                     third_riddle()
             break
 
@@ -451,6 +524,7 @@ def third_riddle():
     Depedning on the answer the player eiter continues to
     final_question, or it's game over.
     """
+    # Displays the third riddle and possible answers
     print(riddles["Third riddle"]["riddle"])
     time.sleep(5)
     print("Choose between the following: " + riddles["Third riddle"]["answers"][0] + " or " + riddles["Third riddle"]["answers"][1]) 
@@ -459,19 +533,22 @@ def third_riddle():
     time.sleep(1)
 
     while True:
-        your_answer = input("What's your answer, sun or egg?")
-
+        # If the player answers "egg" the loop breaks and they continue
+        # to final_question
         if your_answer in riddles["Third riddle"]["answers"][1]:
             print("Right answer.\n")
             time.sleep(1.5)
-            final_question()
+            second_final_question()
             break
+        # If the player answers "sun" the loop breaks and it's game over
         elif your_answer == riddles["Third riddle"]["answers"][0]:
             print("Wrong answer.")
             time.sleep(1.5)
             game_over()
             restart_game()
             break
+        # If the player answers neither sun or egg they are promped to 
+        # answer the question again
         else:
             print("Invalid answer. Please choose between sun or egg\n")
             time.sleep(1)
@@ -499,7 +576,8 @@ def restart_game():
     restart_game = input("Do you want to restart the game? (yes or no): ")
     while restart_game.lower() not in ["yes", "no"]:
         print("Please enter either 'yes' or 'no'.")
-        restart_game = input("Do you want to restart the game? (yes or no): \n")
+        restart_game = input("Do you want to restart the game? "
+                             "(yes or no): \n")
     if restart_game.lower() == "yes":
         print("\n--------------------------------------")
         time.sleep(1.5)
