@@ -59,7 +59,7 @@ def play_game():
         print("\nThat's not one of the options. Please try again\n")
         name = input(
             "Choose one of the following "
-            f"character names: {','.join(character_names)}: \n"
+            f"character names: {', '.join(character_names)}: \n"
             )
     time.sleep(1)
 
@@ -71,6 +71,7 @@ def play_game():
                 f"dark Swedish forest, {name}? (yes or no):\n"
                 )
             time.sleep(1)
+
             # If the player answers yes, the game continues with
             # the introduction
             if are_you_ready.lower() == "yes":
@@ -97,6 +98,7 @@ def play_game():
                 print("--------------------------------------\n")
                 time.sleep(2)
                 first_question()
+
             # If the player answers no,
             # the game over and restart game functions are called
             elif are_you_ready.lower() == "no":
@@ -107,8 +109,7 @@ def play_game():
                 restart_game()
                 break
             else:
-                raise ValueError("Plese enter yes or no")
-                                 
+                raise ValueError("Plese enter yes or no")                    
         except ValueError as error:
             print(error)
 
@@ -171,7 +172,6 @@ def first_question():
         # the question again
         else:
             print("Invalid choice. Please enter a or b.")
-            continue
 
 
 def second_question():
@@ -239,6 +239,9 @@ def second_question():
             time.sleep(1.5)
             break
 
+        elif your_answer.lower() == "exit":
+            exit_game()
+
         # If the player answers neither a or b they are promped to answer
         # the question again
         else:
@@ -288,6 +291,11 @@ def third_question():
             time.sleep(1.5)
             first_riddle()
             break
+
+        elif axe() == "exit":
+            exit_game()
+            break
+
         else:
             print("Invalid choice. Please enter yes or no.\n")
             time.sleep(1)
@@ -348,6 +356,11 @@ def first_riddle():
             game_over()
             restart_game()
             break
+
+        elif your_answer.lower() == "exit":
+            exit_game()
+            break
+
         # If the player answers neither time or wind they are promped to answer
         # the question again
         else:
@@ -392,6 +405,10 @@ def second_riddle():
             time.sleep(1.5)
             game_over()
             restart_game()
+            break
+
+        elif your_answer.lower() == "exit":
+            exit_game()
             break
         # If the player answers neither darkness or wind they are promped to 
         # answer the question again
@@ -445,7 +462,7 @@ def final_question():
         # finish the game
         if your_answer.lower() == "b":
             time.sleep(1.5)
-            print(Fore.GREEN + "\n######################")
+            print(Fore.GREEN + " \n######################")
             print(Fore.GREEN + " #                    #")
             print(Fore.GREEN + " #      VICTORY!      #")
             print(Fore.GREEN + " #                    #")
@@ -499,6 +516,11 @@ def final_question():
                 print(Fore.GREEN + " ######################\n")
                 print(Style.RESET_ALL)
                 restart_game()
+
+            elif your_answer.lower() == "exit":
+                exit_game()
+                break
+
             else:
                 if axe == "yes":
                     print("\nYou walk towards to the crying dwarf")
@@ -572,6 +594,11 @@ def third_riddle():
             game_over()
             restart_game()
             break
+
+        elif your_answer.lower() == "exit":
+            exit_game()
+            break
+        
         # If the player answers neither sun or egg they are promped to
         # answer the question again
         else:
@@ -622,29 +649,32 @@ def second_final_question():
     print(f"\nThe coin lands on {coin_tossed} \n")
     time.sleep(1.5)
     # If the coin lands on "heads" the game is finished 
-    if coin_tossed == "heads":
-        print("Everything becomes dark.\n")
-        time.sleep(1.5)
-        print("You open your eyes and realise...")
-        time.sleep(1.5)
-        print("You're in your own bed!")
-        time.sleep(1.5)
-        print("\n--------------------------------------") 
-        print(Fore.GREEN + " \n######################")
-        print(Fore.GREEN + " #                    #")
-        print(Fore.GREEN + " #      VICTORY!      #")
-        print(Fore.GREEN + " #                    #")
-        print(Fore.GREEN + " ######################\n")
-        print(Style.RESET_ALL)
-        restart_game()
-    # If the coin lands on "tails", it's game over
-    else:
-        print("\nA trap door opens beneath you and you fall to your death.\n")
+    while True:
+        if coin_tossed == "heads":
+            print("Everything becomes dark.\n")
+            time.sleep(1.5)
+            print("You open your eyes and realise...")
+            time.sleep(1.5)
+            print("You're in your own bed!")
+            time.sleep(1.5)
+            print("\n--------------------------------------") 
+            print(Fore.GREEN + " \n######################")
+            print(Fore.GREEN + " #                    #")
+            print(Fore.GREEN + " #      VICTORY!      #")
+            print(Fore.GREEN + " #                    #")
+            print(Fore.GREEN + " ######################\n")
+            print(Style.RESET_ALL)
+            restart_game()
+            break
+        # If the coin lands on "tails", it's game over
+        print("A trap door opens beneath you and you fall to your "
+              "death")
         game_over()
         time.sleep(1.5)
         restart_game()
+        break
 
-           
+
 def game_over():
     """
     Is called every time the player answers a question/riddle wrong. 
@@ -686,7 +716,7 @@ def restart_game():
 def exit_game():
     """
     Is called if the player chooses to exit the game,
-    by entering "exit"
+    at any stage.
     """
     print("Thanks for playing!\n")
     sys.exit()
