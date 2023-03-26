@@ -171,9 +171,6 @@ def second_question():
     """
     print("\nYou follow the stream. After a while it narrows down enough "
           "for you to jump over.\n")
-    time.sleep(1.5)
-    print("When you have landed on the other side of the stream,")
-    print("you find a log to sit on. You need to catch your breath.\n")
     time.sleep(2.5)
     print("But what's that sound?\n")
     time.sleep(1.5)
@@ -246,8 +243,6 @@ def third_question():
     messages are displayed. Both answers leads to first_riddle
     """
     print("\nGood choice! Trust no one.\n")
-    time.sleep(2)
-    print("It feels like you've been walking for hours")
     time.sleep(1.5)
     print("It's still dark, but the full moon lights up your way\n")
     time.sleep(1.5)
@@ -293,7 +288,6 @@ def first_riddle():
     Depedning on the answer the player eiter continues to
     second_riddle, or it's game over.
     """
-
     print("You're thirsty and tired.")
     time.sleep(1.5)
     print("After a while you decide you need a rest. \n")
@@ -311,10 +305,6 @@ def first_riddle():
     print("################\n")
     time.sleep(2)
     print("Gollum won't let you go until you've played a game of riddles.\n")
-    time.sleep(1.5)
-    print("But he's in a good mood.")
-    time.sleep(1.5)
-    print("He just found his missing gold ring.\n")
     time.sleep(1.5)
     print("He's giving you a fair chance to answer his riddles.\n")
     time.sleep(1.5)
@@ -336,7 +326,7 @@ def first_riddle():
             print("Right answer.\n")
             time.sleep(1.5)
             print("Next riddle:\n")
-            time.sleep(2)
+            time.sleep(1.5)
             second_riddle()
             break
         # If the player answers "wind" the loop breaks and it's game over
@@ -377,7 +367,7 @@ def second_riddle():
             time.sleep(1.5)
             print("You are vey good at riddles.\n")
             time.sleep(1.5)
-            print("yess..yess my precious, very good..\n")
+            print("'yess..yess my precious, very good..'\n")
             time.sleep(1.5)
             print("Gollum lets you go.")
             time.sleep(1.5)
@@ -417,12 +407,10 @@ def final_question():
     time.sleep(1.5)
     print("You can hear something...")
     time.sleep(1.5)
-    print("Who's that? \n")
-    time.sleep(1.5)
     print("It's a dwarf, sitting on a rock further ahead. He's crying.")
     time.sleep(1.5)
     print("I wonder why..?\n")
-    print("What do you do now? You have to choose wisely. \n")
+    print("What do you do now?\nYou have to choose wisely. \n")
     time.sleep(1.5)
     print("Your life might depend on it...\n")
     time.sleep(1.5)
@@ -509,11 +497,12 @@ def final_question():
                     time.sleep(1.5)
                     print("THIEF!\n")
                     time.sleep(1.5)
-                    print("Before you have time to react, the dwarfs throws a "
+                    print("Before you have time to react, the dwarf throws a "
                           "rock at you.\n")
                     time.sleep(1.5)
-                    print("It hits you right between the eyes.\n")
-                    time.sleep(1.5)
+                    print("It hits you right between the eyes.")
+                    print("\n--------------------------------------\n")
+                    time.sleep(2)
                     third_riddle()
             break
 
@@ -531,22 +520,28 @@ def third_riddle():
     Depedning on the answer the player eiter continues to
     final_question, or it's game over.
     """
-    print("You wake up with a terrible headache.")
+    print("You wake up with a terrible headache.\n")
+    time.sleep(1.5)
     print("You're back at the lake.")
-    print("How did you get here?")
-    print("'They are awake my precious! They are awake!'")
-    print("Oh no..it's Gollum again. ")
+    time.sleep(1.5)
+    print("How did you get here?\n")
+    time.sleep(1.5)
+    print("'They are awake my precious! They are awake!'\n")
+    time.sleep(1.5)
+    print("Oh no..it's Gollum again.\n")
+    time.sleep(1.5)
     print("He has prepared another riddle")
-    print("And just like earlier he won't let you go")
-    print("unless you answer correctly")
-    print("Third riddle goes as follows:")
+    time.sleep(1.5)
+    print("And just like before he won't let you go "
+          "unless you answer correctly\n")
+    print("Third riddle goes as follows:\n")
 
     # Displays the third riddle and possible answers
     print(riddles["Third riddle"]["riddle"])
     time.sleep(5)
     print("Choose between the following: " + riddles["Third riddle"]["answers"][0] + " or " + riddles["Third riddle"]["answers"][1]) 
     your_answer = input("What's your answer?\n")
-    print("\n--------------------------------------")
+    print("\n--------------------------------------\n")
     time.sleep(1)
 
     while True:
@@ -554,8 +549,8 @@ def third_riddle():
         # to final_question
         if your_answer in riddles["Third riddle"]["answers"][1]:
             print("Right answer.\n")
-            print("You're free to go, again.")
-            time.sleep(1.5)
+            print("You're free to go, again.\n")
+            time.sleep(2)
             second_final_question()
             break
         # If the player answers "sun" the loop breaks and it's game over
@@ -575,28 +570,69 @@ def third_riddle():
 
 def second_final_question():
     """
-    If the player answer "a" and axe=="yes" in final_question(),
-    the player is directed to second_final_question() and is 
+    If the player answer "egg" in the third_riddle
+    the player is directed to second_final_question() and is
     displayed with the last question that either leads to victory or
     game over
     """
     # Displays the question and answers
-    print("A coin you toss,")
-    print("A chance you take,")
-    print("Heads or tails,")
-    print("Which path will fate make?")
-    print("\n--------------------------------------") 
-
+    print("You find a path that you start following.")
     time.sleep(1.5)
-    print(Fore.GREEN + "\n######################")
-    print(Fore.GREEN + " #                    #")
-    print(Fore.GREEN + " #      VICTORY!      #")
-    print(Fore.GREEN + " #                    #")
-    print(Fore.GREEN + " ######################\n")
-    print(Style.RESET_ALL)
-    restart_game()
-           
+    print("Oh no, a dead end.\n")
+    time.sleep(1.5)
+    print("But wait, you see a rune at the end of the path.")
+    time.sleep(1.5)
+    print("There's a poem on the rune.\n")
+    time.sleep(2)
+    print("A coin you toss,")
+    time.sleep(1)
+    print("A chance you take,")
+    time.sleep(1)
+    print("Heads or tails,")
+    time.sleep(1)
+    print("Which path will fate make?\n")
+    time.sleep(2)
+    print("On a little piedestal next to the rune there is a coin.\n")
+    time.sleep(1.5)
+    print("You decide to toss it.\n")
+    time.sleep(1.5)
+    print("You count to 3:")
+    time.sleep(1.5)
+    print("1")
+    time.sleep(1.5)
+    print("2")
+    time.sleep(1.5)
+    print("3")
 
+    # Ask player to enter "toss and randomly generates results
+    input("Enter 'toss' to flip the coin:\n")
+    coin_tossed = random.choice(["heads", "tails"])
+    print(f"\nThe coin lands on {coin_tossed} \n")
+    time.sleep(1.5)
+    # If the coin lands on "heads" the game is finished 
+    if coin_tossed == "heads":
+        print("Everything becomes dark.\n")
+        time.sleep(1.5)
+        print("You open your eyes and realise...")
+        time.sleep(1.5)
+        print("You're in your own bed!")
+        time.sleep(1.5)
+        print("\n--------------------------------------") 
+        print(Fore.GREEN + " \n######################")
+        print(Fore.GREEN + " #                    #")
+        print(Fore.GREEN + " #      VICTORY!      #")
+        print(Fore.GREEN + " #                    #")
+        print(Fore.GREEN + " ######################\n")
+        print(Style.RESET_ALL)
+        restart_game()
+    # If the coin lands on "tails", it's game over
+    else:
+        print("\nA trap door opens beneath you and you fall to your death.\n")
+        game_over()
+        time.sleep(1.5)
+        restart_game()
+
+           
 def game_over():
     """
     Is called every time the player answers a question/riddle wrong. 
