@@ -63,38 +63,39 @@ def play_game():
     time.sleep(1)
 
     # Asks the player if they are ready. They must enter yes or no
-    are_you_ready = input(
-        "\nAre you ready to enter the deep, "
-        f"dark Swedish forest, {name}? (yes or no):\n"
-        )
-    time.sleep(1)
-    while are_you_ready.lower() not in ["yes", "no"]:
-        are_you_ready = input("\nHmm... was that a yes or a no?\n")
-        time.sleep(1)
+    while True:
+        try:
+            are_you_ready = input(
+                "\nAre you ready to enter the deep, "
+                f"dark Swedish forest, {name}? (yes or no):\n"
+                )
+            time.sleep(1)
+            if are_you_ready.lower() == "yes":
+                print("")
+                print(f"Well then, {name}! Get ready.\n")
+                time.sleep(1.5)
+                print("You find yourself lost in the Swedish forest.")
+                time.sleep(2)
+                print("With no memory of how you got there.\n")
+                time.sleep(2)
+                print("The cold autumn wind sends shivers down your spine.")
+                time.sleep(2)
+                print("When you listen closely, you can hear the trees "
+                "whispering to each other.\n")
+                time.sleep(2)
+                print("You can't stay here, you have to find a way out!\n")
+                time.sleep(1.5)
+                print("Or else.. who knows what's lurking in the dark.\n")
+                time.sleep(2)
+                print("Good luck, see you on the other side...hopfully.\n")
+                print("--------------------------------------\n")
+                time.sleep(2)
+                first_question()
+        
+
+        
 
     # If the player answers yes, the game continues with the introduction
-    if are_you_ready.lower() == "yes":
-        print("")
-        print(f"Well then, {name}! Get ready.\n")
-        time.sleep(1.5)
-        print("You find yourself lost in the Swedish forest.")
-        time.sleep(2)
-        print("With no memory of how you got there.\n")
-        time.sleep(2)
-        print("The cold autumn wind sends shivers down your spine.")
-        time.sleep(2)
-        print("When you listen closely, you can hear the trees "
-              "whispering to each other.\n")
-        time.sleep(2)
-        print("You can't stay here, you have to find a way out!\n")
-        time.sleep(1.5)
-        print("Or else.. who knows what's lurking in the dark.\n")
-        time.sleep(2)
-        print("Good luck, see you on the other side...hopfully.\n")
-        print("--------------------------------------\n")
-        time.sleep(2)
-        first_question()
-
     # If the player answers no,
     # the game over and restart game functions are called
     else:
