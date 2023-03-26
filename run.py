@@ -1,5 +1,6 @@
 import time
 import random
+import sys
 
 from colorama import Fore, Style
 
@@ -70,10 +71,15 @@ def play_game():
                 f"dark Swedish forest, {name}? (yes or no):\n"
                 )
             time.sleep(1)
+            # If the player answers yes, the game continues with
+            # the introduction
             if are_you_ready.lower() == "yes":
                 print("")
                 print(f"Well then, {name}! Get ready.\n")
                 time.sleep(1.5)
+                print("(You can exit the game at any stage by typing 'exit' "
+                      "in the console)\n\n")
+                time.sleep(2)
                 print("You find yourself lost in the Swedish forest.")
                 time.sleep(2)
                 print("With no memory of how you got there.\n")
@@ -81,7 +87,7 @@ def play_game():
                 print("The cold autumn wind sends shivers down your spine.")
                 time.sleep(2)
                 print("When you listen closely, you can hear the trees "
-                "whispering to each other.\n")
+                      "whispering to each other.\n")
                 time.sleep(2)
                 print("You can't stay here, you have to find a way out!\n")
                 time.sleep(1.5)
@@ -91,23 +97,25 @@ def play_game():
                 print("--------------------------------------\n")
                 time.sleep(2)
                 first_question()
-        
+            # If the player answers no,
+            # the game over and restart game functions are called
+            elif are_you_ready.lower() == "no":
+                print("\nIt's game over before it even begins!\n")
+                time.sleep(1.5)
+                game_over()
+                time.sleep(1)
+                restart_game()
+                break
+            else:
+                raise ValueError("Plese enter yes or no")
+                                 
+        except ValueError as error:
+            print(error)
 
-        
-
-    # If the player answers yes, the game continues with the introduction
-    # If the player answers no,
-    # the game over and restart game functions are called
-    else:
-        print("\nIt's game over before it even begins!\n")
-        game_over()
-        time.sleep(1)
-        restart_game()
-        
 
 def first_question():
     """
-    Presents the player with the first question,
+    Presents the player with the first question
     to either cross the stream or follow the stream.
     Depedning on the answer the player eiter continues to
     second_question, or it's game over.
@@ -136,7 +144,7 @@ def first_question():
 
     while True:
         # If the player answers "a" the loop breaks and they continue
-        # to second_question
+        # # to second_question
         if your_answer.lower() == "a":
             time.sleep(1.5)
             second_question()
@@ -155,6 +163,9 @@ def first_question():
             restart_game()
             time.sleep(1.5)
             break
+
+        elif your_answer.lower() == "exit":
+            exit_game()
 
         # If the player answers neither a or b they are promped to answer
         # the question again
@@ -670,6 +681,15 @@ def restart_game():
         print(Fore.BLUE + " #                    #")
         print(Fore.BLUE + " ######################")
         print(Style.RESET_ALL)
+
+
+def exit_game():
+    """
+    Is called if the player chooses to exit the game,
+    by entering "exit"
+    """
+    print("Thanks for playing!\n")
+    sys.exit()
 
 
 play_game()
