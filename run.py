@@ -78,8 +78,8 @@ def play_game():
                 print("")
                 print(f"Well then, {name}! Get ready.\n")
                 time.sleep(1.5)
-                print("(You can exit the game at any stage by typing 'exit' "
-                      "in the console)\n\n")
+                print("(You can exit the game by answering 'exit' "
+                      "to the questions.)\n\n")
                 time.sleep(2)
                 print("You find yourself lost in the Swedish forest.")
                 time.sleep(2)
@@ -132,20 +132,20 @@ def first_question():
     print("It looks calm.\n")
     time.sleep(1.5)
     
-    # Displays the question and  possible answers
+# Displays the question and possible answers
     print("Do you:")
     time.sleep(1.5)
     print("a) Follow the stream until you find a safer way to cross it")
     time.sleep(1.5)
     print("b) Cross the stream and hope it is as calm as it looks \n")
     time.sleep(1)
-    your_answer = input("What do you do? (a or b):\n")
-    time.sleep(1)
-    print("\n--------------------------------------")
 
     while True:
         # If the player answers "a" the loop breaks and they continue
         # # to second_question
+        your_answer = input("What do you do? (a or b):\n")
+        time.sleep(1)
+
         if your_answer.lower() == "a":
             time.sleep(1.5)
             second_question()
@@ -171,8 +171,10 @@ def first_question():
         # If the player answers neither a or b they are promped to answer
         # the question again
         else:
-            print("Invalid choice. Please enter a or b.")
-
+            print("Invalid choice. Please enter a or b.\n")
+            time.sleep(1)
+            continue
+            
 
 def second_question():
     """
@@ -181,6 +183,7 @@ def second_question():
     Depedning on the answer the player eiter continues to
     first_riddle, or it's game over.
     """
+    print("\n--------------------------------------")
     print("\nYou follow the stream. After a while it narrows down enough "
           "for you to jump over.\n")
     time.sleep(2.5)
@@ -598,7 +601,7 @@ def third_riddle():
         elif your_answer.lower() == "exit":
             exit_game()
             break
-        
+
         # If the player answers neither sun or egg they are promped to
         # answer the question again
         else:
