@@ -678,14 +678,10 @@ def third_riddle():
             continue
 
 
-def second_final_question():
+def second_final_question_intro():
     """
-    If the player answer "egg" in the third_riddle
-    the player is directed to second_final_question() and is
-    displayed with the last question that either leads to victory or
-    game over, using the random factor.
+    Presents the player with the intro to the second final question. 
     """
-    # Displays the question and answers
     print("You find a path you start following.")
     time.sleep(2)
     print("Oh no, a dead end.\n")
@@ -714,6 +710,16 @@ def second_final_question():
     time.sleep(1.5)
     print("3")
     time.sleep(1.5)
+
+
+def second_final_question():
+    """
+    If the player answer "egg" in the third_riddle
+    the player is directed to second_final_question() and is
+    displayed with the last question that either leads to victory or
+    game over, using the random factor.
+    """
+    second_final_question_intro()
 
     # Ask player to enter "toss and randomly generates results
     input("Enter 'flip' to flip the coin:\n")
