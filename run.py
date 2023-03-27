@@ -202,18 +202,23 @@ def first_question():
             continue
 
 
-print("\n--------------------------------------")
-time.sleep(1.5)
-print("\nYou follow the stream.")
-print("After a while, it narrows down enough for you to jump over.\n")
-time.sleep(2)
-print("But what's that sound?\n")
-time.sleep(2)
-print("People! You can hear a faint laughter coming from inside the "
-      "forest.")
-time.sleep(2)
-print("You notice a bonfire in the distance. "
-      "Maybe they can help you?\n")
+def second_question_intro():
+    """
+    Presents the player with the intro to the
+    second question.
+    """
+    print("\n--------------------------------------")
+    time.sleep(1.5)
+    print("\nYou follow the stream.")
+    print("After a while, it narrows down enough for you to jump over.\n")
+    time.sleep(2)
+    print("But what's that sound?\n")
+    time.sleep(2)
+    print("People! You can hear a faint laughter coming from inside the "
+          "forest.")
+    time.sleep(2)
+    print("You notice a bonfire in the distance. "
+          "Maybe they can help you?\n")
 
 
 def second_question():
@@ -223,6 +228,8 @@ def second_question():
     Depending on the answer the player eiter continues to
     first_riddle, or it's game over.
     """
+    second_question_intro()
+
     # Displays the question and answers
     time.sleep(2)
     print("Do you:")
@@ -235,16 +242,9 @@ def second_question():
 
     while True:
         your_answer = input("What do you do? (a or b):\n")
-
-        # If the player answers "a" the loop breaks and they continue
-        # to first_riddle
-        if your_answer.lower() == "b":
-            time.sleep(2)
-            third_question()
-            break
-
+    
         # If the player answers "b" the loop breaks and it's game over
-        elif your_answer.lower() == "a":
+        if your_answer.lower() == "a":
             print("--------------------------------------\n")
             print("You approach the group of people.\n")
             time.sleep(2)
@@ -268,6 +268,13 @@ def second_question():
             time.sleep(2)
             restart_game()
             time.sleep(2)
+            break
+
+        # If the player answers "a" the loop breaks and they continue. 
+        # to first_riddle
+        elif your_answer.lower() == "b":
+            time.sleep(2)
+            third_question()
             break
 
         elif your_answer.lower() == "exit":
