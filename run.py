@@ -49,11 +49,11 @@ def choose_name():
     time.sleep(2)
     print("\nThis is the Swedish Forest Text Adventure Game\n")
     time.sleep(2)
+    print("After you've typed your answer you press the 'Enter' key to "
+          "submit your answer.")
+    time.sleep(2)
     print("(You can exit the game by answering 'exit' "
           "to the questions)")
-    time.sleep(2)
-    print("(After you've typed your answer you press the 'Enter' key to "
-          "submit your answer.")
     time.sleep(2)
     print("\n--------------------------------------\n")
     time.sleep(2)
@@ -115,6 +115,7 @@ def are_you_ready():
                 print("You can't stay here. You have to find a way out!\n")
                 time.sleep(2.5)
                 print("Good luck. See you on the other side...hopefully.\n")
+                time.sleep(1.5)
                 print("--------------------------------------\n")
                 time.sleep(2.5)
                 first_question()
@@ -133,7 +134,7 @@ def are_you_ready():
                 restart_game()
                 break
             else:
-                raise ValueError("Invalid answer. Plese enter yes or no.")
+                raise ValueError("\nInvalid answer. Plese enter yes or no.")
         except ValueError as error:
             print(error)
 
@@ -211,8 +212,8 @@ def second_question():
     """
     print("\n--------------------------------------")
     time.sleep(1.5)
-    print("\nYou follow the stream. After a while, it narrows down enough "
-          "for you to jump over.\n")
+    print("\nYou follow the stream.")
+    print("After a while, it narrows down enough for you to jump over.\n")
     time.sleep(2)
     print("But what's that sound?\n")
     time.sleep(2)
@@ -275,7 +276,7 @@ def second_question():
         # If the player answers neither a or b they are promped to answer
         # the question again
         else:
-            print("Invalid choice. Please enter yes or no.")
+            print("\nInvalid choice. Please enter yes or no.")
             time.sleep(1)
             continue
 
@@ -346,9 +347,9 @@ def first_riddle():
     print("You reach a small lake.")
     time.sleep(2)
     print("You splash your face with water and have a drink. \n")
-    time.sleep(2)
+    time.sleep(2.5)
     print("You don't notice the creature Gollum sneaking up behind you...\n")
-    time.sleep(2)
+    time.sleep(2.5)
     print(Fore.BLUE + " ###################")
     print(Fore.BLUE + " #                 #")
     print(Fore.BLUE + " #      BOOO!      #")
@@ -357,10 +358,10 @@ def first_riddle():
     print(Style.RESET_ALL)
     time.sleep(2)
     print("Gollum will let you go once you've played a game of riddles.\n")
-    time.sleep(2)
+    time.sleep(2.5)
     print("He's giving you a fair chance to answer his riddles.\n"
           "You'll get two options.")
-    time.sleep(2.5)
+    time.sleep(3)
     print("So think carefully.\n")
     time.sleep(2)
     print("First riddle:\n")
@@ -407,9 +408,10 @@ def first_riddle():
         # If the player answers neither time or wind they are promped to answer
         # the question again
         else:
-            print("\nInvalid answer. Please choose between time or wind.")
-            time.sleep(1)
-            continue
+            if your_answer not in riddles["First riddle"]["answers"]:
+                print("\nInvalid answer. Please choose between time or wind.")
+                time.sleep(1)
+                continue
 
 
 def second_riddle():
@@ -462,10 +464,10 @@ def second_riddle():
         # If the player answers neither darkness or wind they are promped to
         # answer the question again
         else:
-            print("\nInvalid answer. Please choose between darkness "
-                  "or shadow.")
-            time.sleep(1)
-            continue
+            if your_answer not in riddles["Second riddle"]["answers"]:
+                print("\nInvalid answer. Please choose between darkness or shadow.")
+                time.sleep(1)
+                continue
 
 
 def final_question():
@@ -678,7 +680,7 @@ def second_final_question():
     time.sleep(2.5)
     print("On a small pedestal next to the rune, there is a coin.\n")
     time.sleep(2.5)
-    print("You decide to toss it.\n")
+    print("You decide to flip it.\n")
     time.sleep(2)
     print("You count to 3:")
     time.sleep(1.5)
@@ -690,7 +692,7 @@ def second_final_question():
     time.sleep(1.5)
 
     # Ask player to enter "toss and randomly generates results
-    input("Enter 'toss' to flip the coin:\n")
+    input("Enter 'flip' to flip the coin:\n")
     time.sleep(2)
     coin_tossed = random.choice(["heads", "tails"])
     print(f"\nThe coin lands on {coin_tossed}. \n")

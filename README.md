@@ -1,14 +1,15 @@
-## Reminders
-
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
-
-## Creating the Heroku app
-
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
-
-1. `heroku/python`
-2. `heroku/nodejs`
-
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+# **Swedish Forest Text Adventure Game**
+## **Description**
+### *Game ruless*
+### *Flow chart*
+## **Features**
+## **Testing**
+### *Unfixed bugs*
+## **Deployment**
+### *Version Control*
+The git commands below were used throughout development to push code to the remote repository in GitHub:
+- `git add .` - This command was used to add a change in the working directory to the staging area
+- `git commit -m "message"` -This command was used to save changes to the local repository. A brief description of what has changed and when
+- `git push` - This command was used to push all commits to the remote repository on GitHub
+## **Credits**
+### *Content* 
