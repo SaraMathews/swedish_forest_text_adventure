@@ -287,12 +287,10 @@ def second_question():
             continue
 
 
-def third_question():
+def third_question_intro():
     """
     Presents the player with the third question,
     to either take the axe or leave it.
-    Depedning on if the player answers yes or no, different print
-    messages are displayed. Both answers leads to first_riddle
     """
     print("\n--------------------------------------")
     print("\nGood choice! Trust no one.\n")
@@ -306,7 +304,14 @@ def third_question():
     print("Wonder who it belongs to?\n")
     time.sleep(2)
 
-    # Displays the third question. Both answers leads to first_riddle
+
+def third_question():
+    """
+    Depedning on if the player answers yes or no, different print
+    messages are displayed. Both answers leads to first_riddle
+    """
+    third_question_intro()
+
     while True:
         global axe
 
