@@ -7,6 +7,7 @@ from colorama import Fore, Style
 # Global variable
 global axe 
 axe = "no"
+character_name = ""
 
 # The riddles dictionary contains three items, each of which is another
 # dictionary representing a riddle.
@@ -37,11 +38,13 @@ riddles = {
     }
 
 
-def character_name():
+def choose_name():
     """
     Starts the adventure game with a welcome message.
     Lets the player choose a character name.
     """
+    global character_name 
+
     time.sleep(1.5)
     print("\nThis is the Swedish Forest Text Adventure Game\n")
     time.sleep(2)
@@ -63,6 +66,7 @@ def character_name():
             break
 
         if name in character_names:
+            character_name = name
             are_you_ready()
             break
 
@@ -80,8 +84,8 @@ def are_you_ready():
     """
     while True:
         try:
-            ready = input("\nAre you ready to enter the deep, "
-                          "dark Swedish forest? (yes or no):\n")
+            ready = input("\nAre you ready to enter the deep, dark "
+                          f"Swedish forest, {character_name}? (yes or no):\n")
             time.sleep(1)
 
             # If the player answers yes, the game continues with
@@ -535,6 +539,8 @@ def final_question():
                 print(Fore.GREEN + " #                    #")
                 print(Fore.GREEN + " ######################")
                 print(Style.RESET_ALL)
+                print(f"\nCongratulations, {character_name}, you completed the "
+                  "Swedish Forest Text Adventure Game!")
                 restart_game()
 
             # If axe == "yes" the player is directed to third_riddle
@@ -698,7 +704,10 @@ def second_final_question():
             print(Fore.GREEN + " ######################")
             print(Style.RESET_ALL)
             restart_game()
+            print(f"\nCongratulations, {character_name}, you completed the "
+                  "Swedish Forest Text Adventure Game!")
             break
+
         # If the coin lands on "tails", it's game over
         print("A trap door opens beneath you and you fall to your "
               "death.\n")
@@ -727,7 +736,7 @@ def restart_game():
     Is called every time the player answers a question/riddle wrong.
     Lets the player choose to either restart the game or exit.
     """
-    restart_game = input("Do you want to restart the game? (yes or no): ")
+    restart_game = input(f"Do you want to restart the game, {character_name}? (yes or no): ")
     while restart_game.lower() not in ["yes", "no"]:
         print("\nPlease enter either 'yes' or 'no'.")
         restart_game = input("Do you want to restart the game? "
@@ -753,8 +762,8 @@ def exit_game():
     Is called if the player chooses to exit the game,
     at any stage.
     """
-    print("\nThanks for playing!\n")
+    print(f"\nThanks for playing, {character_name}!\n")
     sys.exit()
 
 
-character_name()
+choose_name()
