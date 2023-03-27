@@ -57,18 +57,21 @@ def character_name():
     character_names = ["Bjorn", "Ragnar", "Hilda"]
     name = input("Choose one of the following "
                  f"character names: {', '.join(character_names)}:\n")
-
-    while name not in character_names:
-        print("\nThat's not one of the options. Please try again.")
-        name = input("Choose one of the following "
-                     f"character names: {', '.join(character_names)}: \n")
-        if name.lower == "exit":
+    while True:
+        if name.lower() == "exit":
             exit_game()
             break
 
-        else:
+        if name in character_names:
             are_you_ready()
+            break
 
+        else:
+            print("\nThat's not one of the options. Please try again.")
+            name = input("Choose one of the following "
+                         f"character names: {', '.join(character_names)}: \n")
+        time.sleep(1.5)
+        
 
 def are_you_ready():
     """
@@ -77,7 +80,7 @@ def are_you_ready():
     """
     while True:
         try:
-            ready = input("Are you ready to enter the deep, "
+            ready = input("\nAre you ready to enter the deep, "
                           "dark Swedish forest? (yes or no):\n")
             time.sleep(1)
 
