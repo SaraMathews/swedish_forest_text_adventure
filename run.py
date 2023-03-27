@@ -346,11 +346,10 @@ def third_question():
             continue
 
 
-def first_riddle():
-    """
-    Presents the player with the first riddle.
-    Depedning on the answer the player eiter continues to
-    second_riddle, or it's game over.
+def first_riddle_intro():
+    """ 
+    Presents the player with the intro
+    to the first riddle.
     """
     print("After a while, you decide you need a rest. \n")
     time.sleep(2)
@@ -376,6 +375,13 @@ def first_riddle():
     time.sleep(2)
     print("First riddle:\n")
     time.sleep(2)
+
+
+def first_riddle():
+    """
+    Depedning on the answer the player eiter continues to
+    second_riddle, or it's game over.
+    """
 
     # Displays the first riddle and possible answers
     print(riddles["First riddle"]["riddle"])
