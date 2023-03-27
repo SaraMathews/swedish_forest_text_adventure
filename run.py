@@ -54,14 +54,13 @@ def choose_name():
     print(Fore.GREEN + " #########################")
     print(Style.RESET_ALL)
     time.sleep(2)
+    print("--------------------------------------\n")
     print("After you've typed your answer, press the 'Enter' key to "
-          "submit your answer.")
-    time.sleep(2)
+          "submit your answer.\n")
     print("You can exit the game by answering 'exit' "
           "to the questions.")
-    time.sleep(2)
     print("\n--------------------------------------\n")
-    time.sleep(2)
+    time.sleep(4)
 
     # Character name must be chosen before continuing
     print("Welcome, brave adventurer!\n")
@@ -591,7 +590,7 @@ def final_question(axe):
                 time.sleep(2)
                 print("He yells!\n")
                 time.sleep(2)
-                print("  THIEF!\n")
+                print(Fore.RED + "THIEF!\n")
                 time.sleep(2)
                 print("Before you have time to react, the dwarf throws a "
                       "rock at you.\n")
