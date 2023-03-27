@@ -47,7 +47,7 @@ def choose_name():
     global CHARACTER_NAME
 
     time.sleep(2)
-    print("\nThis is the Swedish Forest Text Adventure Game\n")
+    print("\nThis is the Swedish Forest Text Adventure Game.\n")
     time.sleep(2)
     print("After you've typed your answer you press the 'Enter' key to "
           "submit your answer.")
@@ -67,13 +67,13 @@ def choose_name():
     time.sleep(1.5)
 
     while True:
-        if name.lower() == "exit":
-            exit_game()
-            break
-
         if name in character_names:
             CHARACTER_NAME = name
             are_you_ready()
+            break
+
+        if name.lower() == "exit":
+            exit_game()
             break
 
         else:
@@ -199,30 +199,30 @@ def first_question():
         # the question again
         else:
             print("Invalid answer. Please enter a or b.")
-            time.sleep(1)
             continue
+
+
+print("\n--------------------------------------")
+time.sleep(1.5)
+print("\nYou follow the stream.")
+print("After a while, it narrows down enough for you to jump over.\n")
+time.sleep(2)
+print("But what's that sound?\n")
+time.sleep(2)
+print("People! You can hear a faint laughter coming from inside the "
+      "forest.")
+time.sleep(2)
+print("You notice a bonfire in the distance. "
+      "Maybe they can help you?\n")
 
 
 def second_question():
     """
     Presents the player with the second question,
     to either approach the group of people or stay away from them.
-    Depedning on the answer the player eiter continues to
+    Depending on the answer the player eiter continues to
     first_riddle, or it's game over.
     """
-    print("\n--------------------------------------")
-    time.sleep(1.5)
-    print("\nYou follow the stream.")
-    print("After a while, it narrows down enough for you to jump over.\n")
-    time.sleep(2)
-    print("But what's that sound?\n")
-    time.sleep(2)
-    print("People! You can hear a faint laughter coming from inside the "
-          "forest.")
-    time.sleep(2)
-    print("You notice a bonfire in the distance. "
-          "Maybe they can help you?\n")
-
     # Displays the question and answers
     time.sleep(2)
     print("Do you:")
@@ -276,8 +276,7 @@ def second_question():
         # If the player answers neither a or b they are promped to answer
         # the question again
         else:
-            print("\nInvalid choice. Please enter yes or no.")
-            time.sleep(1)
+            print("\nInvalid choice. Please enter a or b.")
             continue
 
 
@@ -331,8 +330,7 @@ def third_question():
             break
 
         else:
-            print("Invalid choice. Please enter yes or no.\n")
-            time.sleep(1)
+            print("Invalid choice. Please enter yes or no.")
             continue
 
 
