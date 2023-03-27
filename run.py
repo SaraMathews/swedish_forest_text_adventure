@@ -37,12 +37,10 @@ riddles = {
     }
 
 
-def play_game():
+def character_name():
     """
     Starts the adventure game with a welcome message.
     Lets the player choose a character name.
-    Asks the player if they are ready to play the game.
-    Displays indtroduction before displaying the first question.
     """
     time.sleep(1.5)
     print("\nThis is the Swedish Forest Text Adventure Game\n")
@@ -57,33 +55,37 @@ def play_game():
     print("Welcome brave adventurer!\n")
     time.sleep(1.5)
     character_names = ["Bjorn", "Ragnar", "Hilda"]
-    name = input(
-        "Choose one of the following "
-        f"character names: {', '.join(character_names)}:\n"
-                )
+    name = input("Choose one of the following "
+                 f"character names: {', '.join(character_names)}:\n")
+
     while name not in character_names:
-        print("\nThat's not one of the options. Please try again\n")
+        print("\nThat's not one of the options. Please try again.")
         name = input("Choose one of the following "
                      f"character names: {', '.join(character_names)}: \n")
-        if name == "exit":
+        if name.lower == "exit":
             exit_game()
             break
-    time.sleep(1)
 
-    # Asks the player if they are ready. They must enter yes or no
+        else:
+            are_you_ready()
+
+
+def are_you_ready():
+    """
+    Asks the player if they are ready to play the game.
+    Displays indtroduction before displaying the first question.
+    """
     while True:
         try:
-            are_you_ready = input(
-                "\nAre you ready to enter the deep, "
-                f"dark Swedish forest, {name}? (yes or no):\n"
-                )
+            ready = input("Are you ready to enter the deep, "
+                          "dark Swedish forest? (yes or no):\n")
             time.sleep(1)
 
             # If the player answers yes, the game continues with
             # the introduction
-            if are_you_ready.lower() == "yes":
+            if ready.lower() == "yes":
                 print("")
-                print(f"Well then, {name}! Get ready.\n")
+                print("Get ready.\n")
                 print("--------------------------------------\n")
                 time.sleep(1.5)
                 print("You find yourself lost in the Swedish forest.")
@@ -102,13 +104,13 @@ def play_game():
                 time.sleep(2)
                 first_question()
 
-            elif are_you_ready.lower() == "exit":
+            elif ready.lower() == "exit":
                 exit_game()
                 break
 
             # If the player answers no,
             # the game over and restart game functions are called
-            elif are_you_ready.lower() == "no":
+            elif ready.lower() == "no":
                 print("\nIt's game over before it even begins!\n")
                 time.sleep(1.5)
                 game_over()
@@ -116,7 +118,7 @@ def play_game():
                 restart_game()
                 break
             else:
-                raise ValueError("Invalid answer. Plese enter yes or no.")                  
+                raise ValueError("Invalid answer. Plese enter yes or no.")                 
         except ValueError as error:
             print(error)
 
@@ -217,7 +219,7 @@ def second_question():
 
     while True:
         your_answer = input("What do you do? (a or b):\n")
-       
+      
         # If the player answers "a" the loop breaks and they continue
         # to first_riddle
         if your_answer.lower() == "b":
@@ -333,7 +335,7 @@ def first_riddle():
     time.sleep(2)
     print(Fore.BLUE + " ###################")
     print(Fore.BLUE + " #                 #")
-    print(Fore.BLUE + " #       BOOO!     #")
+    print(Fore.BLUE + " #      BOOO!      #")
     print(Fore.BLUE + " #                 #")
     print(Fore.BLUE + " ###################")
     print(Style.RESET_ALL)
@@ -546,6 +548,7 @@ def final_question():
                       "rock at you.\n")
                 time.sleep(2.5)
                 print("It hits you right between the eyes.")
+                time.sleep(1.5)
                 print("\n--------------------------------------\n")
                 time.sleep(2)
                 third_riddle()
@@ -583,7 +586,7 @@ def third_riddle():
     print("He has prepared another riddle.")
     time.sleep(1.5)
     print("And just like before he won't let you go "
-          "unless you answer correctly\n")
+          "unless you answer correctly.\n")
     time.sleep(2.5)
     print("Third riddle goes as follows:\n")
     time.sleep(1.5)
@@ -729,7 +732,7 @@ def restart_game():
     if restart_game.lower() == "yes":
         print("\n--------------------------------------")
         time.sleep(1.5)
-        play_game()
+        character_name()
     else:
         time.sleep(1)
         print("")
@@ -751,4 +754,4 @@ def exit_game():
     sys.exit()
 
 
-play_game()
+character_name()
