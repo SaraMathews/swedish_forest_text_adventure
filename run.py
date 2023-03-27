@@ -382,6 +382,7 @@ def first_riddle():
     Depedning on the answer the player eiter continues to
     second_riddle, or it's game over.
     """
+    first_riddle_intro()
 
     # Displays the first riddle and possible answers
     print(riddles["First riddle"]["riddle"])
@@ -486,15 +487,9 @@ def second_riddle():
                 continue
 
 
-def final_question():
-    """
-    Presents the player with the final question.
-    The player now has two options.
-    Option a) is game over
-    Option c) has two outcomes. Depending on if they picked up
-    the axe or not. If they picked up the axe, they are taken back to
-    Gollum to answer a third riddle. If they didn't pick up the axe it's
-    victory, the player makes it out of the forest
+def final_question_intro():
+    """ 
+    Presents the player with the intro to the final question.
     """
     print("You don't have much energy left.")
     time.sleep(2)
@@ -510,6 +505,19 @@ def final_question():
     time.sleep(2.5)
     print("Your life might depend on it...\n")
     time.sleep(2)
+    
+
+def final_question():
+    """
+    Presents the player with the final question.
+    The player now has two options.
+    Option a) is game over
+    Option c) has two outcomes. Depending on if they picked up
+    the axe or not. If they picked up the axe, they are taken back to
+    Gollum to answer a third riddle. If they didn't pick up the axe it's
+    victory, the player makes it out of the forest
+    """
+    final_question_intro()
 
     # Displays the question and answers
     print("Do you:")
