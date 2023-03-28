@@ -329,10 +329,10 @@ def third_question(axe):
             time.sleep(1.5)
             print("\n--------------------------------------\n")
             time.sleep(2)
-            first_riddle()
+            first_riddle(axe)
             break
 
-        elif axe == "no":
+        elif your_answer == "no":
             time.sleep(2)
             print("\nThat's probably a smart move.\nThe owner of the axe will "
                   "not be happy when he notices it's gone.")
@@ -340,10 +340,10 @@ def third_question(axe):
             time.sleep(1.5)
             print("\n--------------------------------------\n")
             time.sleep(2)
-            first_riddle()
+            first_riddle(axe)
             break
 
-        elif axe == "exit":
+        elif your_answer == "exit":
             exit_game()
             break
 
@@ -383,7 +383,7 @@ def first_riddle_intro():
     time.sleep(2)
 
 
-def first_riddle():
+def first_riddle(axe):
     """
     Depedning on the answer the player eiter continues to
     second_riddle, or it's game over.
