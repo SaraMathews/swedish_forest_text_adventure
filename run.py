@@ -248,7 +248,7 @@ def second_question():
 
     while True:
         your_answer = input("What do you do? (a or b):\n")
-        
+
         # If the player answers "b" the loop breaks and it's game over
         if your_answer.lower() == "a":
             print("--------------------------------------\n")
@@ -402,11 +402,12 @@ def first_riddle():
 
     while True:
         your_answer = input("What's your answer?\n")
-        time.sleep(2)
+        time.sleep(1)
 
         # If the player answers "time" the loop breaks and they continue
         # to second_riddle
-        if your_answer.strip().lower() == riddles["First riddle"]["answers"][0]:
+        if your_answer.strip().lower() == riddles["First riddle"]\
+                ["answers"][0]:
             print("\nRight answer.")
             time.sleep(1.5)
             print("\n--------------------------------------\n")
@@ -434,7 +435,6 @@ def first_riddle():
         else:
             if your_answer not in riddles["First riddle"]["answers"]:
                 print("\nInvalid answer. Please choose between time or wind.")
-                time.sleep(1)
                 continue
 
 
@@ -454,12 +454,13 @@ def second_riddle(axe):
 
     while True:
         your_answer = input("What's your answer?\n")
-        time.sleep(2)
+        time.sleep(1)
         axe = your_answer == riddles["Second riddle"]["answers"][0]
 
         # If the player answers "darkness" the loop breaks and they continue
         # to final_question
-        if your_answer.strip().lower() == riddles["Second riddle"]["answers"][0]:
+        if your_answer.strip().lower() == riddles["Second riddle"]\
+                ["answers"][0]:
             print("\nRight answer.\n")
             time.sleep(2)
             print("You are very good at riddles.\n")
@@ -491,7 +492,6 @@ def second_riddle(axe):
             if your_answer not in riddles["Second riddle"]["answers"]:
                 print("\nInvalid answer. Please choose between darkness "
                       "or shadow.")
-                time.sleep(1)
                 continue
 
 
@@ -654,7 +654,8 @@ def third_riddle():
 
         # If the player answers "egg" the loop breaks and they continue
         # to final_question
-        if your_answer.strip().lower() == riddles["Third riddle"]["answers"][1]:
+        if your_answer.strip().lower() == riddles["Third riddle"]\
+                ["answers"][1]:
             print("\nRight answer.\n")
             time.sleep(2)
             print("You're free to go, again.\n")
@@ -680,13 +681,12 @@ def third_riddle():
         # answer the question again
         else:
             print("\nInvalid answer. Please choose between sun or egg")
-            time.sleep(1)
             continue
 
 
 def second_final_question_intro():
     """
-    Presents the player with the intro to the second final question. 
+    Presents the player with the intro to the second final question.
     """
     print("You find a path you start following.")
     time.sleep(2)
