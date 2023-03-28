@@ -388,6 +388,8 @@ def first_riddle():
     Depedning on the answer the player eiter continues to
     second_riddle, or it's game over.
     """
+    axe = False
+
     first_riddle_intro()
 
     # Displays the first riddle and possible answers
@@ -411,7 +413,7 @@ def first_riddle():
             time.sleep(1.5)
             print("Next riddle:\n")
             time.sleep(2)
-            second_riddle()
+            second_riddle(axe)
             break
 
         # If the player answers "wind" the loop breaks and it's game over
@@ -436,7 +438,7 @@ def first_riddle():
                 continue
 
 
-def second_riddle():
+def second_riddle(axe):
     """
     Presents the player with the second riddle.
     Depedning on the answer the player eiter continues to
@@ -591,6 +593,7 @@ def final_question(axe):
                 print("He yells!\n")
                 time.sleep(2)
                 print(Fore.RED + "THIEF!\n")
+                print(Style.RESET_ALL)
                 time.sleep(2)
                 print("Before you have time to react, the dwarf throws a "
                       "rock at you.\n")
