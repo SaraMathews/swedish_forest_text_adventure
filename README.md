@@ -1,7 +1,7 @@
 # **Swedish Forest Text Adventure Game**
 ## **Description**
 The game is a text-based adventure game where the player is tasked with answering questions and riddles to progress through the game. The player will encounter various scenarios and meet different creatures. The end goal is to make it out of the forest.  
-### *Ho to play*
+### *How to play*
 The game begins with an introduction where the player is given some background information about the game and the quest they are embarking on. The player is then presented with a series of questions and riddles that they must answer correctly to progress in the game. If they choose the correct answer, they move on to the next question/riddle. If they choose the wrong answer, they lose the game and can choose to start over. The player can also choose to exit the game at any time by answering "exit" on the questions/riddles.
 
 In addition, the game keeps track of whether the player has picked up an axe. In the final question (when the player encounters a dwarf) the outcomes differs depending on if the player picked up the axe or not. This question follows a different procedure than the previous ones. The player will not lose if they answer wrong, but they will be taken back to the lake where they must answer another riddle. If they answer the riddle correctly, another final question is displayed, where the "random" factor has been implemented to give the game a twist.
@@ -11,15 +11,30 @@ The flow chart was created to provide a clear visual representation of how I wan
 
 ## **Features**
 ### *Choose character name*
+ Lets the player choose their character's name before the game begins. The function starts with a welcome message and instructions on how to play the game. The player is prompted to choose a name from a pre-defined list of options. If the player chooses a valid name, the game proceeds to the next function. If the player types an invalid name, they are prompted to choose a name again until they choose a valid one.
 ### *Are you ready?*
-### *Choose their answer*
-### *Improve their chance of victory*
-### *Correct answer declaration*
-### *Wrong answer declaration*
-#### *Game over statement*
-#### *Restart game statement*
-### *Correct answer declaration*
+Asks the player if they are ready to play the game and displays an introduction if they answer yes. If they answer no, the game ends. 
+If the player answers an invalid answer, they are prompted to enter yes or no. 
 ### *Exit game early*
+This function is called if the player chooses to exit the game at any stage. It prints a goodbye message that includes the characters' name. The "sys.exit()" command is used to immediately terminate the game. 
+### *Choose answer*
+The player is always presented with two answer options to choose from (except in the function second_final_question). 
+They select their answer by typing it in the console, and the game then evaluates their response and proceeds accordingly. 
+In the second final question, the player has to enter "flip" to flip the coin and continue the game. 
+### *Improve chance of victory*
+The third question function gives the player the option to pick up an axe.
+This can either improve their chances of victory or not, depending on what they choose. 
+The function displays different messages depending on if the player picks up the axe or not, but both answeres lead to the first riddle function. 
+### *Correct answer declaration*
+Whenever the player answers correctly, the game will either acknowledge that it was the correct answer or continue the story, indicating to the player that they are making progress.
+### *Wrong answer declaration*
+Whenever the player answers wrong, the game will acknowledge that it was the wrong answer by displaying a message suitable for the answer to the question/riddle. 
+#### *Game over message*
+The game over message will display after the wrong answer declaration and will let the player know its game over. 
+#### *Restart game message*
+After displaying the "Game Over" message the player is asked to choose whether they want to restart the game or not. If they choose "yes", the game restarts from the beginning. If they choose "no", the "exit game" message is displayed before the game is terminated. 
+
+
 
 
 
