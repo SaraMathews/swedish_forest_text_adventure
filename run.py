@@ -547,7 +547,7 @@ def final_question(axe):
             restart_game()
             break
 
-        elif your_answer.lower() == "a":
+        if your_answer.lower() == "a":
             # If the player answers "a" and axe == "no" the loop breaks and the
             # game is finished.
             if not axe:
@@ -598,15 +598,14 @@ def final_question(axe):
                 break
 
         # If the player types "exit" the loop breaks and they exit the game
-        elif your_answer.lower() == "exit":
+        if your_answer.lower() == "exit":
             exit_game()
             break
 
         # If the player answers neither a or b, they are prompted to answer
         # the question again
-        else:
-            print("\nInvalid choice. Please enter a or b.")
-            continue
+        print("\nInvalid choice. Please enter a or b.")
+        continue
 
 
 def third_riddle():
