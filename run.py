@@ -248,7 +248,7 @@ def second_question():
 
     while True:
         your_answer = input("What do you do? (a or b):\n")
-    
+        
         # If the player answers "b" the loop breaks and it's game over
         if your_answer.lower() == "a":
             print("--------------------------------------\n")
@@ -276,8 +276,8 @@ def second_question():
             time.sleep(2)
             break
 
-        # If the player answers "a" the loop breaks and they continue. 
-        # to first_riddle
+        # If the player answers "a" the loop breaks and they continue.
+        # # to first_riddle
         elif your_answer.lower() == "b":
             time.sleep(2)
             third_question(axe)
@@ -353,7 +353,7 @@ def third_question(axe):
 
 
 def first_riddle_intro():
-    """ 
+    """
     Presents the player with the intro
     to the first riddle.
     """
@@ -489,13 +489,14 @@ def second_riddle(axe):
         # answer the question again
         else:
             if your_answer not in riddles["Second riddle"]["answers"]:
-                print("\nInvalid answer. Please choose between darkness or shadow.")
+                print("\nInvalid answer. Please choose between darkness "
+                      "or shadow.")
                 time.sleep(1)
                 continue
 
 
 def final_question_intro():
-    """ 
+    """
     Presents the player with the intro to the final question,
     and the final question.
     """
@@ -521,7 +522,7 @@ def final_question_intro():
     time.sleep(2)
     print("b) Sneak past the dwarf and hope he doesn't notice you.\n")
     time.sleep(1.5)
-    
+
 
 def final_question(axe):
     """
@@ -592,7 +593,7 @@ def final_question(axe):
                 time.sleep(2)
                 print("He yells!\n")
                 time.sleep(2)
-                print(Fore.RED + "THIEF!\n")
+                print(Fore.RED + "THIEF!")
                 print(Style.RESET_ALL)
                 time.sleep(2)
                 print("Before you have time to react, the dwarf throws a "
@@ -634,7 +635,7 @@ def third_riddle():
     time.sleep(2)
     print("Oh no..it's Gollum again.\n")
     time.sleep(2)
-    print("He has prepared another riddle.")
+    print("He has prepared another riddle.\n")
     time.sleep(3)
     print("The third riddle goes as follows:\n")
     time.sleep(2)
@@ -653,7 +654,7 @@ def third_riddle():
 
         # If the player answers "egg" the loop breaks and they continue
         # to final_question
-        if your_answer in riddles["Third riddle"]["answers"][1]:
+        if your_answer.strip().lower() == riddles["Third riddle"]["answers"][1]:
             print("\nRight answer.\n")
             time.sleep(2)
             print("You're free to go, again.\n")
