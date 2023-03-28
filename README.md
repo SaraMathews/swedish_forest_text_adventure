@@ -61,16 +61,38 @@ After displaying the "Game Over" message the player is asked to choose whether t
 
 ### *Functional testing*
 Below, I have summarized the testing in screenshots of several Excel sheets for easier overview. I have separated the sheets into the following categories:
-- Function testing introduction <br>
+- Function testing introduction. <br>
     Includes the function choose_name() and are_you_ready() <br>
-- Function testing questions
-    Includes the function first_question(), secon_question and third_question(axe)
-- Function testing riddles
-    Includes the function first_riddle(axe), second_riddle(axe), and third_riddle()
-- Function testing final questions
-    Includes the function final_question() and secon_final_question()
-- Function testing other
-    Includes the function game_over(), restart_game() and exit_game
+
+- Function testing questions. <br>
+    Includes the function first_question()second_question and third_question(axe) <br>
+
+- Function testing riddles.<br>
+    Includes the function first_riddle(axe), second_riddle(axe), and third_riddle()<br>
+
+- Function testing final questions.<br>
+    Includes the function final_question() and second_final_question()<br>
+
+- Function testing other.<br>
+    Includes the function game_over(),
+    restart_game() and exit_game 
+
+In this test, I also ensured that all the print messages were correct and displayed in the appropriate order.
+
+**Function testing introduction**
+![test_intro](docs/test_intro.png)
+
+**Function testing questions**
+![test_questions](docs/test_questions.png)
+
+**Function testing riddles**
+![test_riddles](docs/test_riddles.png)
+
+**Function testing final questions**
+
+**Function testing other**
+![test_other](docs/test_other.png)
+
 
 ### *Unfixed bugs*
 I have not noticed any bugs that would affect the game, but it's still possible that there are minor bugs present that I have yet to discover. If that's the case, these minor bugs do not appear to impact the gameplay experience.
@@ -88,6 +110,13 @@ final_question, third_riddle, second_final_question
 
 - on line 409, 462, 657: whitespace before '['flake8(E211)
 
+## **Technologies**
+- The game was developed using Python.
+- All content was stored on GitHub.
+- The game was deployed to the web using Heroku.
+- The flowchart was made using LucidChart.
+- Python module time was used to add a delay between pieces of code
+- Python module sys was used in the exit_game() function
 
 ## **Deployment**
 ### *Version Control*
