@@ -166,9 +166,9 @@ def first_question():
     # Displays the question and possible answers
     print("Do you:")
     time.sleep(1.5)
-    print("a) Follow the stream until you find a safer way to cross it")
+    print("a) Follow the stream until you find a safer way to cross it.")
     time.sleep(2)
-    print("b) Cross the stream and hope it is as calm as it looks \n")
+    print("b) Cross the stream and hope it is as calm as it looks. \n")
     time.sleep(1.5)
 
     while True:
@@ -758,13 +758,18 @@ def second_final_question():
             restart_game()
             break
 
+        elif coin_tossed.lower() == "exit":
+            exit_game()
+            break
+
         # If the coin lands on "tails", it's game over
-        print("A trap door opens beneath you and you fall to your "
-              "death.\n")
-        time.sleep(2)
-        game_over()
-        restart_game()
-        break
+        else:
+            print("A trap door opens beneath you and you fall to your "
+                  "death.\n")
+            time.sleep(2)
+            game_over()
+            restart_game()
+            break
 
 
 def game_over():

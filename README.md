@@ -58,6 +58,17 @@ After displaying the "Game Over" message the player is asked to choose whether t
 
 ## **Testing**
 ### *Unfixed bugs*
+I have not noticed any bugs that would affect the game, but it's still possible that there are minor bugs present that I have yet to discover. If that's the case, these minor bugs do not appear to impact the gameplay experience.
+
+I have however, encountered some warning messages that I'm unsure how to resolve:
+
+- global CHARACTER_NAME : Using the global statement at the module levelpylint(global-at-module-level)
+
+- if statements in while loop: Unnecessary "elif" after "break", remove the leading "el" from "elif"pylint(no-else-break)
+
+This warning message is present in the following functions' while loops:
+choose_name, first_question function, second_question, third_question, first_riddle, second_riddle,
+final_question, third_riddle, second_final_question
 
 ## **Deployment**
 ### *Version Control*
