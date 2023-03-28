@@ -1,10 +1,31 @@
 # **Swedish Forest Text Adventure Game**
 ## **Description**
-### *Game ruless*
+The game is a text-based adventure game where the player is tasked with answering questions and riddles to progress through the game. The player will encounter various scenarios and meet different creatures. The end goal is to make it out of the forest.  
+### *Ho to play*
+The game begins with an introduction where the player is given some background information about the game and the quest they are embarking on. The player is then presented with a series of questions and riddles that they must answer correctly to progress in the game. If they choose the correct answer, they move on to the next question/riddle. If they choose the wrong answer, they lose the game and can choose to start over. The player can also choose to exit the game at any time by answering "exit" on the questions/riddles.
+
+In addition, the game keeps track of whether the player has picked up an axe. In the final question (when the player encounters a dwarf) the outcomes differs depending on if the player picked up the axe or not. This question follows a different procedure than the previous ones. The player will not lose if they answer wrong, but they will be taken back to the lake where they must answer another riddle. If they answer the riddle correctly, another final question is displayed, where the "random" factor has been implemented to give the game a twist.
+
 ### *Flow chart*
+The flow chart was created to provide a clear visual representation of how I wanted the game to progress based on the player's answers. It helped me design the game and its functions more effectively, without getting lost in the code. I have revised the flow chart a few times as new ideas and functions were added to the game.
+
 ## **Features**
+### *Choose character name*
+### *Are you ready?*
+### *Choose their answer*
+### *Improve their chance of victory*
+### *Correct answer declaration*
+### *Wrong answer declaration*
+#### *Game over statement*
+#### *Restart game statement*
+### *Correct answer declaration*
+### *Exit game early*
+
+
+
 ## **Testing**
 ### *Unfixed bugs*
+
 ## **Deployment**
 ### *Version Control*
 The git commands below were used throughout development to push code to the remote repository in GitHub:
