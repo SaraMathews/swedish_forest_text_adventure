@@ -9,6 +9,8 @@ In addition, the game keeps track of whether the player has picked up an axe. In
 ### *Flow chart*
 The flow chart was created to provide a clear visual representation of how I wanted the game to progress based on the player's answers. It helped me design the game and its functions more effectively, without getting lost in the code. I have revised the flow chart a few times as new ideas and functions were added to the game.
 
+![Flow chart](docs/text%20_adventure.jpeg)
+
 ## **Features**
 ### *Choose character name*
  Lets the player choose their character's name before the game begins. The function starts with a welcome message and instructions on how to play the game. The player is prompted to choose a name from a pre-defined list of options. If the player chooses a valid name, the game proceeds to the next function. If the player types an invalid name, they are prompted to choose a name again until they choose a valid one.
@@ -33,8 +35,6 @@ Whenever the player answers wrong, the game will acknowledge that it was the wro
 The game over message will display after the wrong answer declaration and will let the player know its game over. 
 #### *Restart game message*
 After displaying the "Game Over" message the player is asked to choose whether they want to restart the game or not. If they choose "yes", the game restarts from the beginning. If they choose "no", the "exit game" message is displayed before the game is terminated. 
-
-
 
 
 
