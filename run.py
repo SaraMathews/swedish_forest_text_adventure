@@ -97,16 +97,14 @@ def are_you_ready():
 
     while True:
         try:
-            ready = input("Are you ready to enter the deep, dark "
+            ready = input("\nAre you ready to enter the deep, dark "
                           f"Swedish forest, {CHARACTER_NAME}? (yes or no):\n")
             time.sleep(1)
 
             # If the player answers yes, the game continues with
             # the introduction
             if ready.lower() == "yes":
-                print("")
-                print("Get ready.\n")
-                print("--------------------------------------\n")
+                print("\n--------------------------------------\n")
                 time.sleep(2)
                 print("You find yourself lost in the Swedish forest.")
                 time.sleep(2.5)
@@ -389,7 +387,6 @@ def first_riddle(axe):
     Depedning on the answer the player eiter continues to
     second_riddle, or it's game over.
     """
-    axe = False
 
     first_riddle_intro()
 
@@ -456,7 +453,7 @@ def second_riddle(axe):
     while True:
         your_answer = input("What's your answer?\n")
         time.sleep(1)
-        axe = your_answer == riddles["Second riddle"]["answers"][0]
+        #axe = your_answer == riddles["Second riddle"]["answers"][0]
 
         # If the player answers "darkness" the loop breaks and they continue
         # to final_question
@@ -583,7 +580,7 @@ def final_question(axe):
                 print(Fore.GREEN + " ######################")
                 print(Style.RESET_ALL)
                 print(f"\nCongratulations, {CHARACTER_NAME}, you completed "
-                      "the Swedish Forest Text Adventure Game!")
+                      "the Swedish Forest Text Adventure Game!\n")
                 restart_game()
 
             # If axe == "yes" the player is directed to third_riddle
@@ -599,7 +596,7 @@ def final_question(axe):
                 time.sleep(2)
                 print("Before you have time to react, the dwarf throws a "
                       "rock at you.\n")
-                time.sleep(2.5)
+                time.sleep(3)
                 print("It hits you right between the eyes.")
                 time.sleep(1.5)
                 print("\n--------------------------------------\n")
@@ -631,9 +628,9 @@ def third_riddle():
     print("You're back at the lake.")
     time.sleep(2)
     print("How did you get here?\n")
-    time.sleep(2)
+    time.sleep(2.5)
     print("'They are awake, my precious! They are awake!'\n")
-    time.sleep(2)
+    time.sleep(2.5)
     print("Oh no..it's Gollum again.\n")
     time.sleep(2)
     print("He has prepared another riddle.\n")
@@ -698,19 +695,19 @@ def second_final_question_intro():
     print("There's a poem on the rune.\n")
     time.sleep(2.5)
     print("A coin you toss,")
-    time.sleep(1.5)
+    time.sleep(2)
     print("A chance you take,")
-    time.sleep(1.5)
+    time.sleep(2)
     print("Heads or tails,")
-    time.sleep(1.5)
+    time.sleep(2)
     print("Which path will fate make?\n")
-    time.sleep(2.5)
+    time.sleep(2)
     print("On a small pedestal next to the rune, there is a coin.\n")
-    time.sleep(2.5)
+    time.sleep(3)
     print("You decide to flip it.\n")
     time.sleep(2)
     print("You count to 3:")
-    time.sleep(1.5)
+    time.sleep(2)
     print("1")
     time.sleep(1.5)
     print("2")
@@ -729,7 +726,7 @@ def second_final_question():
     second_final_question_intro()
 
     # Ask player to enter "flip", and randomly generates results
-    input("Enter 'flip' to flip the coin:\n")
+    input("\nEnter 'flip' to flip the coin:\n")
     time.sleep(2)
     coin_tossed = random.choice(["heads", "tails"])
     print(f"\nThe coin lands on {coin_tossed}. \n")
@@ -742,7 +739,7 @@ def second_final_question():
             time.sleep(2)
             print("You open your eyes and realize...")
             time.sleep(2)
-            print("You're in your bed, safe!")
+            print("You're in your bed, safe!\n")
             time.sleep(2)
             print("\n--------------------------------------")
             print(Fore.GREEN + " ######################")

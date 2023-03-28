@@ -70,6 +70,11 @@ This warning message is present in the following functions' while loops:
 choose_name, first_question function, second_question, third_question, first_riddle, second_riddle,
 final_question, third_riddle, second_final_question
 
+
+whitespace before '['flake8(E211)
+on line 409, 462, 657 
+
+
 ## **Deployment**
 ### *Version Control*
 The git commands below were used throughout development to push code to the remote repository in GitHub:
