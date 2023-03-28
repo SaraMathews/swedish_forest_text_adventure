@@ -23,3 +23,24 @@ Once Github is selected, locate your repository and link it to Heroku.
 - You will see the text "Your app was successfully deployed.". Click the button "View" to open the link to your
 deployed app. 
 ## **Credits**
+- Code Institute LMS
+- Slack
+- My mentor Daisy McGirr
+- https://pypi.org/project/colorama/
+- The text adventure game is in some parts inspired by Lord of The Rings
+- All three riddles is taken from "The Hobbit: An Unexpected Journey"
+
+Inspiration was taken from 
+- https://www.askpython.com/python/text-based-adventure-game
+- https://www.thecoderpedia.com/blog/text-based-adventure-game-in-python/
+- https://www.youtube.com/watch?v=u8X6TiJA8as
+- https://github.com/OlgaJ1989/text_adventure/blob/main/run.py
+
+
+Help and guidance when I encountered problems I didn't know how to solve myself
+- https://www.w3schools.com/python/ 
+- https://stackoverflow.com/questions/2070684/how-can-i-make-my-python-code-stay-under-80-characters-a-line
+- https://stackoverflow.com/questions/15435811/what-is-pep8s-e128-continuation-line-under-indented-for-visual-indent
+- https://www.programiz.com/python-programming/break-continue
+- https://stackoverflow.com/questions/33466860/expected-two-blank-lines-pep8-warning-in-python
+- https://pythonprogramminglanguage.com/try-except/
