@@ -68,7 +68,7 @@ def choose_name():
     character_names = ["Bjorn", "Ragnar", "Hilda"]
     name = input("Choose one of the following "
                  f"character names: {', '.join(character_names)}:\n")
-    time.sleep(1.5)
+    time.sleep(1)
 
     while True:
         if name in character_names:
@@ -85,6 +85,7 @@ def choose_name():
             name = input("Choose one of the following "
                          f"character names: {', '.join(character_names)}: \n")
         time.sleep(2)
+        print("")
 
 
 def are_you_ready():
@@ -96,9 +97,9 @@ def are_you_ready():
 
     while True:
         try:
-            ready = input("\nAre you ready to enter the deep, dark "
+            ready = input("Are you ready to enter the deep, dark "
                           f"Swedish forest, {CHARACTER_NAME}? (yes or no):\n")
-            time.sleep(1.5)
+            time.sleep(1)
 
             # If the player answers yes, the game continues with
             # the introduction
@@ -138,7 +139,7 @@ def are_you_ready():
                 restart_game()
                 break
             else:
-                raise ValueError("Invalid answer. Plese enter yes or no.")
+                raise ValueError("\nInvalid answer. Plese enter yes or no.")
         except ValueError as error:
             print(error)
 
