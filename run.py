@@ -786,7 +786,7 @@ def restart_game():
     """
 
     start_over = input(f"Do you want to restart the game, {CHARACTER_NAME}? "
-                       "(yes or no): ")
+                       "(yes or no): \n")
 
     while start_over.lower() not in ["yes", "no"]:
         print("\nPlease enter either 'yes' or 'no'.")
