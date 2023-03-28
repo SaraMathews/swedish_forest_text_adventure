@@ -406,7 +406,7 @@ def first_riddle():
 
         # If the player answers "time" the loop breaks and they continue
         # to second_riddle
-        if your_answer in riddles["First riddle"]["answers"][0]:
+        if your_answer.strip().lower() == riddles["First riddle"]["answers"][0]:
             print("\nRight answer.")
             time.sleep(1.5)
             print("\n--------------------------------------\n")
@@ -459,7 +459,7 @@ def second_riddle(axe):
 
         # If the player answers "darkness" the loop breaks and they continue
         # to final_question
-        if your_answer in riddles["Second riddle"]["answers"][0]:
+        if your_answer.strip().lower() == riddles["Second riddle"]["answers"][0]:
             print("\nRight answer.\n")
             time.sleep(2)
             print("You are very good at riddles.\n")
