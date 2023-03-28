@@ -57,6 +57,21 @@ After displaying the "Game Over" message the player is asked to choose whether t
 ![Restart](docs/restart.png)
 
 ## **Testing**
+### *Validator testing*
+
+### *Functional testing*
+Below, I have summarized the testing in screenshots of several Excel sheets for easier overview. I have separated the sheets into the following categories:
+- Function testing introduction <br>
+    Includes the function choose_name() and are_you_ready() <br>
+- Function testing questions
+    Includes the function first_question(), secon_question and third_question(axe)
+- Function testing riddles
+    Includes the function first_riddle(axe), second_riddle(axe), and third_riddle()
+- Function testing final questions
+    Includes the function final_question() and secon_final_question()
+- Function testing other
+    Includes the function game_over(), restart_game() and exit_game
+
 ### *Unfixed bugs*
 I have not noticed any bugs that would affect the game, but it's still possible that there are minor bugs present that I have yet to discover. If that's the case, these minor bugs do not appear to impact the gameplay experience.
 
@@ -71,8 +86,7 @@ choose_name, first_question function, second_question, third_question, first_rid
 final_question, third_riddle, second_final_question
 
 
-whitespace before '['flake8(E211)
-on line 409, 462, 657 
+- on line 409, 462, 657: whitespace before '['flake8(E211)
 
 
 ## **Deployment**
