@@ -80,10 +80,9 @@ def choose_name():
             exit_game()
             break
 
-        else:
-            print("\nThat's not one of the options. Please try again.")
-            name = input("Choose one of the following "
-                         f"character names: {', '.join(character_names)}: \n")
+        print("\nThat's not one of the options. Please try again.")
+        name = input("Choose one of the following "
+                     f"character names: {', '.join(character_names)}: \n")
         time.sleep(2)
         print("")
 
@@ -180,7 +179,7 @@ def first_question():
             break
 
         # If the player answers "b," the loop breaks, and it's game over
-        elif your_answer.lower() == "b":
+        if your_answer.lower() == "b":
             print("--------------------------------------\n")
             time.sleep(1.5)
             print("You attempt to cross the stream.\n")
@@ -195,15 +194,14 @@ def first_question():
             time.sleep(2)
             break
 
-        elif your_answer.lower() == "exit":
+        if your_answer.lower() == "exit":
             exit_game()
             break
 
         # If the player answers neither a nor b, they are prompted to answer
         # the question again
-        else:
-            print("\nInvalid answer. Please enter a or b.")
-            continue
+        print("\nInvalid answer. Please enter a or b.")
+        continue
 
 
 def second_question_intro():
@@ -277,19 +275,18 @@ def second_question():
 
         # If the player answers "a" the loop breaks and they continue.
         # # to first_riddle
-        elif your_answer.lower() == "b":
+        if your_answer.lower() == "b":
             time.sleep(2)
             third_question(axe)
             break
 
-        elif your_answer.lower() == "exit":
+        if your_answer.lower() == "exit":
             exit_game()
 
         # If the player answers neither a or b they are promped to answer
         # the question again
-        else:
-            print("\nInvalid choice. Please enter a or b.")
-            continue
+        print("\nInvalid choice. Please enter a or b.")
+        continue
 
 
 def third_question_intro():
@@ -331,7 +328,7 @@ def third_question(axe):
             first_riddle(axe)
             break
 
-        elif your_answer == "no":
+        if your_answer == "no":
             time.sleep(2)
             print("\nThat's probably a smart move.\nThe owner of the axe will "
                   "not be happy when he notices it's gone.")
@@ -342,13 +339,12 @@ def third_question(axe):
             first_riddle(axe)
             break
 
-        elif your_answer == "exit":
+        if your_answer == "exit":
             exit_game()
             break
 
-        else:
-            print("\nInvalid choice. Please enter yes or no.")
-            continue
+        print("\nInvalid choice. Please enter yes or no.")
+        continue
 
 
 def first_riddle_intro():
@@ -416,7 +412,7 @@ def first_riddle(axe):
             break
 
         # If the player answers "wind" the loop breaks and it's game over
-        elif your_answer == riddles["First riddle"]["answers"][1]:
+        if your_answer == riddles["First riddle"]["answers"][1]:
             print("\nWrong answer.\n")
             time.sleep(2)
             game_over()
@@ -424,16 +420,15 @@ def first_riddle(axe):
             break
 
         # If the player types "exit" the loop breaks and they exit the game
-        elif your_answer.lower() == "exit":
+        if your_answer.lower() == "exit":
             exit_game()
             break
 
         # If the player answers neither time or wind they are promped to answer
         # the question again
-        else:
-            if your_answer not in riddles["First riddle"]["answers"]:
-                print("\nInvalid answer. Please choose between time or wind.")
-                continue
+        if your_answer not in riddles["First riddle"]["answers"]:
+            print("\nInvalid answer. Please choose between time or wind.")
+            continue
 
 
 def second_riddle(axe):
@@ -453,7 +448,7 @@ def second_riddle(axe):
     while True:
         your_answer = input("What's your answer?\n")
         time.sleep(1)
-        #axe = your_answer == riddles["Second riddle"]["answers"][0]
+        # axe = your_answer == riddles["Second riddle"]["answers"][0]
 
         # If the player answers "darkness" the loop breaks and they continue
         # to final_question
@@ -471,26 +466,24 @@ def second_riddle(axe):
             time.sleep(2)
             final_question(axe)
             break
-        # If the player answers "shadow" the loop breaks and it's game over
-        elif your_answer == riddles["Second riddle"]["answers"][1]:
-            print("\nWrong answer.\n")
-            time.sleep(2)
-            game_over()
-            restart_game()
-            break
 
-        # If the player types "exit" the loop breaks and they exit the game
-        elif your_answer.lower() == "exit":
+        # If the player answers "shadow" the loop breaks and it's game over
+        if your_answer.lower() == "exit":
             exit_game()
             break
 
         # If the player answers neither darkness or wind they are promped to
         # answer the question again
-        else:
-            if your_answer not in riddles["Second riddle"]["answers"]:
-                print("\nInvalid answer. Please choose between darkness "
-                      "or shadow.")
-                continue
+        if your_answer not in riddles["Second riddle"]["answers"]:
+            print("\nInvalid answer. Please choose between darkness "
+                  "or shadow.")
+            continue
+
+        print("\nWrong answer.\n")
+        time.sleep(2)
+        game_over()
+        restart_game()
+        break
 
 
 def final_question_intro():
@@ -664,22 +657,21 @@ def third_riddle():
             break
 
         # If the player answers "sun" the loop breaks and it's game over
-        elif your_answer == riddles["Third riddle"]["answers"][0]:
+        if your_answer == riddles["Third riddle"]["answers"][0]:
             print("\nWrong answer.\n")
             time.sleep(2)
             game_over()
             restart_game()
             break
 
-        elif your_answer.lower() == "exit":
+        if your_answer.lower() == "exit":
             exit_game()
             break
 
         # If the player answers neither sun or egg they are promped to
         # answer the question again
-        else:
-            print("\nInvalid answer. Please choose between sun or egg")
-            continue
+        print("\nInvalid answer. Please choose between sun or egg")
+        continue
 
 
 def second_final_question_intro():
@@ -755,18 +747,17 @@ def second_final_question():
             restart_game()
             break
 
-        elif coin_tossed.lower() == "exit":
+        if coin_tossed.lower() == "exit":
             exit_game()
             break
 
         # If the coin lands on "tails", it's game over
-        else:
-            print("A trap door opens beneath you and you fall to your "
-                  "death.\n")
-            time.sleep(2)
-            game_over()
-            restart_game()
-            break
+        print("A trap door opens beneath you and you fall to your "
+              "death.\n")
+        time.sleep(2)
+        game_over()
+        restart_game()
+        break
 
 
 def game_over():

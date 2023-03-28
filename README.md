@@ -101,8 +101,7 @@ I have however, encountered some warning messages that I'm unsure how to resolve
 
 - global CHARACTER_NAME : Using the global statement at the module levelpylint(global-at-module-level)
 
-- if statements in while loop: Unnecessary "elif" after "break", remove the leading "el" from "elif"pylint(no-else-break)
-
+- if statements in while loop: Unnecessary "elif" after "break", remove the leading "el" from "elif"pylint(no-else-break) <b>
 This warning message is present in the following functions' while loops:
 choose_name, first_question function, second_question, third_question, first_riddle, second_riddle,
 final_question, third_riddle, second_final_question
