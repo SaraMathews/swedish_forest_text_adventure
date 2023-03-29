@@ -61,6 +61,7 @@ I would add a feature that allows the player to choose the desired speed at whic
 
 ## **Testing**
 ### *Validator testing*
+![test_validator](docs/test_validation.png)
 
 ### *Functional testing*
 Below, I have summarized the testing in screenshots of several Excel sheets for easier overview. I have separated the sheets into the following categories:
@@ -93,6 +94,7 @@ In this test, I also ensured that all the print messages were correct and displa
 
 **Function testing final questions**
 
+
 **Function testing other**
 ![test_other](docs/test_other.png)
 
@@ -103,6 +105,9 @@ I have not noticed any bugs that would affect the game, but it's still possible 
 I have however, encountered one warning messages. 
 This one is beacuse I'm using a global variable:
 - global CHARACTER_NAME : Using the global statement at the module levelpylint(global-at-module-level)
+
+This one is beacuse I have to many statements. I did not have time to correct this.  
+- def final_question(axe): Too many statements (65/50)pylint(too-many-statements)
 
 ### *Other commentss*
 A few people in my family tested the game to see if they could spot any bugs, and also to provide feedback. One of the comments I received was that the game's pace was too fast, so I made adjustments to slow it down. <br>
