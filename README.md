@@ -6,7 +6,7 @@ The game is a text-based adventure game where the player is tasked with answerin
 ### *How to play*
 The game begins with an introduction where the player is given background information about the game and the quest they are embarking on. The player is presented with questions and riddles they must answer correctly to progress in the game. If they choose the correct answer, they move on to the next question/riddle. If they choose the wrong answer, they lose the game and can decide to start over. The player can also choose to exit the game at any time by answering "exit" on the questions/riddles.
 
-In addition, the game keeps track of whether the player has picked up an axe. In the final question (when the player encounters a dwarf), the outcomes differ depending on whether the player picked up the axe. This question follows a different procedure than the previous ones. It's not game over if they answer wrong, but they will be brought back to the lake, where they must answer another riddle. If they answer the riddle correctly, another final question is displayed, where the "random" factor is implemented to give the game a twist.
+In addition, the game keeps track of whether the player has picked up an axe. In the final question (when the player encounters a dwarf), the outcome differ depending on whether the player picked up the axe. This question follows a different procedure than the previous ones. It's not game over if they answer wrong, but they will be brought back to the lake, where they must answer another riddle. If they answer the riddle correctly, another final question is displayed, where the "random" factor is implemented to give the game a twist.
 
 ## *Flow chart*
 The flow chart was created to provide a clear visual representation of how I wanted the game to progress based on the player's answers. It helped me design the game and its functions more effectively without getting lost in the code. I have revised the flow chart a few times as new ideas and functions were added to the game.
@@ -53,7 +53,7 @@ The game over message will display after the wrong answer declaration and will l
 
 ![Game over](docs/game_over.png)
 ### *Restart game message*
-After displaying the "Game Over" message, the player is asked to choose whether to restart the game. If they answer "yes", the game restarts from the beginning. If they answer "no", the "exit game" message is displayed before the game is terminated. 
+After displaying the "Game Over" message, the player is asked to choose whether to restart the game or not. If they answer "yes", the game restarts from the beginning. If they answer "no", the "exit game" message is displayed before the game is terminated. 
 
 ![Restart](docs/restart.png)
 ### *Features left to implement*
@@ -107,7 +107,7 @@ In this test, I also ensured that all the print messages were correct and displa
 ### *Unfixed bugs*
 I have not noticed any bugs that would affect the game, but it's still possible that there are minor bugs present that I have yet to discover. If that's the case, these minor bugs do not appear to impact the gameplay experience.
 
-I have, however, encountered some warning messages. 
+I have, however, encountered some warning messages.<br>
 This one is because I'm using a global variable:
 - global CHARACTER_NAME : Using the global statement at the module levelpylint(global-at-module-level)
 
