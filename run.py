@@ -703,15 +703,12 @@ def second_final_question_intro():
     print("On a small pedestal next to the rune, there is a coin.\n")
     time.sleep(3)
     print("You decide to flip it.\n")
-    time.sleep(2)
-    print("You count to 3:")
-    time.sleep(2)
-    print("1")
     time.sleep(1.5)
-    print("2")
-    time.sleep(1.5)
-    print("3\n")
-    time.sleep(1.5)
+    print("On 3..")
+    # Count to 3 before flipping the coin.
+    for i in range(1, 4):
+        print(i)
+    time.sleep(0.5)
 
 
 def second_final_question():
@@ -742,7 +739,7 @@ def second_final_question():
             time.sleep(2)
             print("You're in your bed, safe!\n")
             time.sleep(2)
-            print("\n--------------------------------------")
+            print("\n--------------------------------------\n")
             print(Fore.GREEN + " ######################")
             print(Fore.GREEN + " #                    #")
             print(Fore.GREEN + " #      VICTORY!      #")

@@ -4,39 +4,40 @@ The game is a text-based adventure game where the player is tasked with answerin
 
 ![Description](docs/text_adventure.png)
 ### *How to play*
-The game begins with an introduction where the player is given some background information about the game and the quest they are embarking on. The player is then presented with a series of questions and riddles that they must answer correctly to progress in the game. If they choose the correct answer, they move on to the next question/riddle. If they choose the wrong answer, they lose the game and can choose to start over. The player can also choose to exit the game at any time by answering "exit" on the questions/riddles.
+The game begins with an introduction where the player is given background information about the game and the quest they are embarking on. The player is presented with questions and riddles they must answer correctly to progress in the game. If they choose the correct answer, they move on to the next question/riddle. If they choose the wrong answer, they lose the game and can decide to start over. The player can also choose to exit the game at any time by answering "exit" on the questions/riddles.
 
-In addition, the game keeps track of whether the player has picked up an axe. In the final question (when the player encounters a dwarf) the outcomes differs depending on if the player picked up the axe or not. This question follows a different procedure than the previous ones. The player will not lose if they answer wrong, but they will be taken back to the lake where they must answer another riddle. If they answer the riddle correctly, another final question is displayed, where the "random" factor has been implemented to give the game a twist.
+In addition, the game keeps track of whether the player has picked up an axe. In the final question (when the player encounters a dwarf), the outcomes differ depending on whether the player picked up the axe. This question follows a different procedure than the previous ones. It's not game over if they answer wrong, but they will be brought back to the lake, where they must answer another riddle. If they answer the riddle correctly, another final question is displayed, where the "random" factor is implemented to give the game a twist.
 
 ## *Flow chart*
-The flow chart was created to provide a clear visual representation of how I wanted the game to progress based on the player's answers. It helped me design the game and its functions more effectively, without getting lost in the code. I have revised the flow chart a few times as new ideas and functions were added to the game.
+The flow chart was created to provide a clear visual representation of how I wanted the game to progress based on the player's answers. It helped me design the game and its functions more effectively without getting lost in the code. I have revised the flow chart a few times as new ideas and functions were added to the game.
 
 ![Flow chart](docs/text%20_adventure.jpeg)
 
 ## **Features**
 ### *Choose character name*
- Lets the player choose their character's name before the game begins. The function starts with instructions on how to play the game. If the player chooses a valid name, the game proceeds to the next function. If the player types an invalid name, they are prompted to choose a name again until they choose a valid one.
+ Let the player choose their character's name before the game begins. The function starts with instructions on how to play the game. The game proceeds to the next function if the player chooses a valid name. If the player types an invalid name, they are prompted to choose a name again until they choose a valid one.
 
- ![Choose character name](docs/choose_name.png)
+![Choose character name](docs/choose_name.png)
 ### *Are you ready?*
 Asks the player if they are ready to play the game and displays an introduction if they answer yes. If they answer no, the game ends. 
 If the player answers an invalid answer, they are prompted to enter yes or no. 
 
 ![Are you ready](docs/are_you_ready.png)
 ### *Exit game early*
-This function is called if the player chooses to exit the game at any stage by answering "exit" on the question/riddle. It prints a goodbye message that includes the characters' name. The "sys.exit()" command is used to immediately terminate the game. 
+This function is called if the player chooses to exit the game at any stage by answering "exit" on the question/riddle. It prints a goodbye message that includes the character's name. The "sys.exit()" command is used to immediately terminate the game. 
 
 ![Exit game](docs/exit_game.png)
+
 ### *Choose answer*
 The player is always presented with two answer options to choose from (except in the function second_final_question). 
 They select their answer by typing it in the console, and the game then evaluates their response and proceeds accordingly. 
 In the second final question, the player has to enter "flip" to flip the coin and continue the game.
 
 ![Choose answer](docs/choose_answer.png)
-### *Improve chance of victory*
+### *Improve the chance of victory*
 The third question function gives the player the option to pick up an axe.
 This can either improve their chances of victory or not, depending on what they choose. 
-The function displays different messages depending on if the player picks up the axe or not, but both answeres lead to the first riddle function.
+The function displays different messages depending on whether the player picks up the axe, but both answers lead to the first riddle function.
 
 ![Improve chance of victory](docs/improve_chances.png)
 ### *Correct answer declaration*
@@ -48,14 +49,13 @@ Whenever the player answers wrong, the game will acknowledge that it was the wro
 
 ![Wrong answer](docs/wrong_answer.png)
 ### *Game over message*
-The game over message will display after the wrong answer declaration and will let the player know its game over. 
+The game over message will display after the wrong answer declaration and will let the player know it's game over. 
 
 ![Game over](docs/game_over.png)
 ### *Restart game message*
-After displaying the "Game Over" message the player is asked to choose whether they want to restart the game or not. If they choose "yes", the game restarts from the beginning. If they choose "no", the "exit game" message is displayed before the game is terminated. 
+After displaying the "Game Over" message, the player is asked to choose whether to restart the game. If they answer "yes", the game restarts from the beginning. If they answer "no", the "exit game" message is displayed before the game is terminated. 
 
 ![Restart](docs/restart.png)
-
 ### *Features left to implement*
 I would add a feature that allows the player to choose the desired speed at which the game runs. 
 
@@ -64,7 +64,7 @@ I would add a feature that allows the player to choose the desired speed at whic
 ![test_validator](docs/test_validation.png)
 
 ### *Functional testing*
-Below, I have summarized the testing in screenshots of several Excel sheets for easier overview. I have separated the sheets into the following categories:
+Below, I have summarized the testing in screenshots of several Excel sheets for an easier overview. I have separated the sheets into the following categories:
 - Function testing introduction. <br>
     Includes the function choose_name() and are_you_ready() <br>
 
@@ -102,18 +102,18 @@ In this test, I also ensured that all the print messages were correct and displa
 ### *Unfixed bugs*
 I have not noticed any bugs that would affect the game, but it's still possible that there are minor bugs present that I have yet to discover. If that's the case, these minor bugs do not appear to impact the gameplay experience.
 
-I have however, encountered one warning messages. 
-This one is beacuse I'm using a global variable:
+I have, however, encountered some warning messages. 
+This one is because I'm using a global variable:
 - global CHARACTER_NAME : Using the global statement at the module levelpylint(global-at-module-level)
 
-This one is beacuse I have to many statements. I did not have time to correct this.  
+This one is because I have too many statements. I did not have time to correct this.  
 - def final_question(axe): Too many statements (65/50)pylint(too-many-statements)
 
 ### *Other commentss*
-A few people in my family tested the game to see if they could spot any bugs, and also to provide feedback. One of the comments I received was that the game's pace was too fast, so I made adjustments to slow it down. <br>
+A few people in my family tested the game to see if they could spot any bugs and provide feedback. One of the comments I received was that the game's pace was too fast, so I made adjustments to slow it down. <br>
 
 When I decided to create an axe variable that changes value based on player input, I initially made it a global variable for easy access throughout the game. However, as taught in the LMS, global variables should be avoided if possible. So i decided to change it, and instead pass the axe down as arguments in functions.  
-I encountered bugs and errors due to having to pass the axe argument down through the code, which took time to resolve. Although I eventually made it work, it would have been easier to understand and avoid potential bugs if I had continued using the global variable, at least for me as a new coder. If I had more time, I would consider changing it back to a global variable, but since the game is functioning as intended, I don't want to risk disrupting the code just hours before the deadline.
+I encountered bugs and errors due to passing the axe argument down through the code, which took time to resolve. Although I eventually made it work, it would have been easier to understand and avoid potential bugs if I had continued using the global variable, at least for me as a new coder. If I had more time, I would consider changing it back to a global variable, but since the game is functioning as intended, I want to avoid disrupting the code just hours before the deadline.
 
 ## **Technologies**
 - The game was developed using Python.
@@ -155,7 +155,7 @@ The steps below were followed to clone the repository locally:
 - My mentor Daisy McGirr
 - https://pypi.org/project/colorama/
 - The text adventure game is in some parts inspired by Lord of The Rings.
-- All three riddles is taken from "The Hobbit: An Unexpected Journey".
+- All three riddles are taken from "The Hobbit: An Unexpected Journey".
 
 Inspiration was taken from 
 - https://www.askpython.com/python/text-based-adventure-game
