@@ -84,18 +84,23 @@ Below, I have summarized the testing in screenshots of several Excel sheets for 
 In this test, I also ensured that all the print messages were correct and displayed in the appropriate order.
 
 **Function testing introduction**
+
 ![test_intro](docs/test_intro.png)
 
 **Function testing questions**
+
 ![test_questions](docs/test_questions.png)
 
 **Function testing riddles**
+
 ![test_riddles](docs/test_riddles.png)
 
 **Function testing final questions**
 
+![test_final_questions](docs/test_final_questions.png)
 
 **Function testing other**
+
 ![test_other](docs/test_other.png)
 
 
@@ -152,7 +157,7 @@ The steps below were followed to clone the repository locally:
 ## **Credits**
 - Code Institute LMS
 - Slack
-- My mentor Daisy McGirr
+- My mentor, Daisy McGirr
 - https://pypi.org/project/colorama/
 - The text adventure game is in some parts inspired by Lord of The Rings.
 - All three riddles are taken from "The Hobbit: An Unexpected Journey".
@@ -169,5 +174,6 @@ Help and guidance when I encountered problems I didn't know how to solve myself
 - https://stackoverflow.com/questions/2070684/how-can-i-make-my-python-code-stay-under-80-characters-a-line
 - https://stackoverflow.com/questions/15435811/what-is-pep8s-e128-continuation-line-under-indented-for-visual-indent
 - https://www.programiz.com/python-programming/break-continue
-- https://stackoverflow.com/questions/33466860/expected-two-blank-lines-pep8-warning-in-python
+- https://peps.python.org/pep-0008/
 - https://pythonprogramminglanguage.com/try-except/
+- Python module in LMS 
