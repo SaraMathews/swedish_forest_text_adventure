@@ -620,7 +620,7 @@ def third_riddle():
     If the player answers a) on the final question and
     axe == yes, they will be presented with the third riddle.
     Depedning on the answer the player eiter continues to
-    final_question, or it's game over.
+    second_final_question, or it's game over.
     """
     print("You wake up with a terrible headache.\n")
     time.sleep(2)
@@ -652,7 +652,7 @@ def third_riddle():
         time.sleep(1)
 
         # If the player answers "egg" the loop breaks and they continue
-        # to final_question
+        # to final_question.
         answer = your_answer.strip().lower()
         if answer == riddles["Third riddle"]["answers"][1]:
             print("\nRight answer.\n")
@@ -664,7 +664,7 @@ def third_riddle():
             second_final_question()
             break
 
-        # If the player answers "sun" the loop breaks and it's game over
+        # If the player answers "sun" the loop breaks and it's game over.
         if your_answer == riddles["Third riddle"]["answers"][0]:
             print("\nWrong answer.\n")
             time.sleep(2)
@@ -676,8 +676,6 @@ def third_riddle():
             exit_game()
             break
 
-        # If the player answers neither sun or egg they are promped to
-        # answer the question again
         print("\nInvalid answer. Please choose between sun or egg")
         continue
 
@@ -712,7 +710,7 @@ def second_final_question_intro():
     time.sleep(1.5)
     print("2")
     time.sleep(1.5)
-    print("3")
+    print("3\n")
     time.sleep(1.5)
 
 
@@ -724,10 +722,11 @@ def second_final_question():
     game over, using the random factor.
     """
     second_final_question_intro()
+    coin_tossed = None
 
     while True:
-        # Ask player to enter "flip", and randomly generates results
-        your_answer = input("\nEnter 'flip' to flip the coin:\n")
+        # Ask player to enter "flip", and randomly generates results.
+        your_answer = input("Enter 'flip' to flip the coin:\n")
         time.sleep(2)
 
         if your_answer.lower() == "flip":
@@ -735,6 +734,7 @@ def second_final_question():
             print(f"\nThe coin lands on {coin_tossed}. \n")
             time.sleep(2)
 
+        # If the coin lands on "heads", the game is finished.
         if coin_tossed == "heads":
             print("Everything becomes dark.\n")
             time.sleep(2)
@@ -790,10 +790,10 @@ def game_over():
 
 def restart_game():
     """
-    Is called every time the player answers a question/riddle wrong.
+    Is called every time the player answers a question/riddle wrong, 
+    after the game_over function.
     Lets the player choose to either restart the game or exit.
     """
-
     start_over = input(
         f"Do you want to restart the game, {CHARACTER_NAME}? (yes or no): \n"
     )
