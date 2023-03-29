@@ -11,30 +11,30 @@ CHARACTER_NAME = ""
 # The riddles dictionary contains three items, each of which is another
 # dictionary representing a riddle.
 riddles = {
-        "First riddle": {
-            "riddle": "This thing all things devours;\n"
-                      "Birds, beasts, trees, flowers;\n"
-                      "Gnaws iron, bites steel;\n"
-                      "Grinds hard stones to meal;\n"
-                      "Slays king, ruins town,\n"
-                      "And beats mountain down.\n",
-            "answers": ["time", "wind"]
-        },
-        "Second riddle": {
-            "riddle": "It cannot be seen, cannot be felt,\n"
-                      "Cannot be heard, cannot be smelt.\n"
-                      "It lies behind stars and under hills,\n"
-                      "And empty holes it fills.\n"
-                      "It comes out first and follows after,\n"
-                      "Ends life, kills laughter.\n",
-            "answers": ["darkness", "shadow"]
-        },
-        "Third riddle": {
-            "riddle": "A box without hinges, key, or lid,\n"
-                      "Yet golden treasure inside is hid.\n",
-            "answers": ["sun", "egg"]
-        }
-    }
+    "First riddle": {
+        "riddle": "This thing all things devours;\n"
+        "Birds, beasts, trees, flowers;\n"
+        "Gnaws iron, bites steel;\n"
+        "Grinds hard stones to meal;\n"
+        "Slays king, ruins town,\n"
+        "And beats mountain down.\n",
+        "answers": ["time", "wind"],
+    },
+    "Second riddle": {
+        "riddle": "It cannot be seen, cannot be felt,\n"
+        "Cannot be heard, cannot be smelt.\n"
+        "It lies behind stars and under hills,\n"
+        "And empty holes it fills.\n"
+        "It comes out first and follows after,\n"
+        "Ends life, kills laughter.\n",
+        "answers": ["darkness", "shadow"],
+    },
+    "Third riddle": {
+        "riddle": "A box without hinges, key, or lid,\n"
+        "Yet golden treasure inside is hid.\n",
+        "answers": ["sun", "egg"],
+    },
+}
 
 
 def choose_name():
@@ -55,10 +55,11 @@ def choose_name():
     print(Style.RESET_ALL)
     time.sleep(2)
     print("--------------------------------------\n")
-    print("After you've typed your answer, press the 'Enter' key to "
-          "submit your answer.\n")
-    print("You can exit the game by answering 'exit' "
-          "to the questions.")
+    print(
+        "After you've typed your answer, press the 'Enter' key to "
+        "submit your answer.\n"
+    )
+    print("You can exit the game by answering 'exit' " "to the questions.")
     print("\n--------------------------------------\n")
     time.sleep(4)
 
@@ -66,8 +67,10 @@ def choose_name():
     print("Welcome, brave adventurer!\n")
     time.sleep(2)
     character_names = ["Bjorn", "Ragnar", "Hilda"]
-    name = input("Choose one of the following "
-                 f"character names: {', '.join(character_names)}:\n")
+    name = input(
+        "Choose one of the following "
+        f"character names: {', '.join(character_names)}:\n"
+    )
     time.sleep(1)
 
     while True:
@@ -81,8 +84,10 @@ def choose_name():
             break
 
         print("\nThat's not one of the options. Please try again.")
-        name = input("Choose one of the following "
-                     f"character names: {', '.join(character_names)}: \n")
+        name = input(
+            "Choose one of the following "
+            f"character names: {', '.join(character_names)}: \n"
+        )
         time.sleep(2)
         print("")
 
@@ -96,8 +101,10 @@ def are_you_ready():
 
     while True:
         try:
-            ready = input("\nAre you ready to enter the deep, dark "
-                          f"Swedish forest, {CHARACTER_NAME}? (yes or no):\n")
+            ready = input(
+                "\nAre you ready to enter the deep, dark "
+                f"Swedish forest, {CHARACTER_NAME}? (yes or no):\n"
+            )
             time.sleep(1)
 
             # If the player answers yes, the game continues with
@@ -111,8 +118,10 @@ def are_you_ready():
                 time.sleep(2.5)
                 print("The cold autumn wind sends shivers down your spine.")
                 time.sleep(2.5)
-                print("When you listen closely, you can hear the trees "
-                      "whispering to each other.\n")
+                print(
+                    "When you listen closely, you can hear the trees "
+                    "whispering to each other.\n"
+                )
                 time.sleep(2.5)
                 print("You can't stay here. You have to find a way out!\n")
                 time.sleep(2.5)
@@ -216,11 +225,9 @@ def second_question_intro():
     time.sleep(2)
     print("But what's that sound?\n")
     time.sleep(2)
-    print("People! You can hear a faint laughter coming from inside the "
-          "forest.")
+    print("People! You can hear a faint laughter coming from inside the " "forest.")
     time.sleep(2)
-    print("You notice a bonfire in the distance. "
-          "Maybe they can help you?\n")
+    print("You notice a bonfire in the distance. " "Maybe they can help you?\n")
 
 
 def second_question():
@@ -237,8 +244,9 @@ def second_question():
     time.sleep(2)
     print("Do you:")
     time.sleep(1.5)
-    print("a) Approach the group of people and ask for directions out of "
-          "the forest.")
+    print(
+        "a) Approach the group of people and ask for directions out of " "the forest."
+    )
     time.sleep(2)
     print("b) Stay away from them. You don't know who these people are.\n")
     time.sleep(1.5)
@@ -265,8 +273,7 @@ def second_question():
             print(r"   mmm   mmm   ")
             print("")
             time.sleep(2)
-            print("They are having a barbecue, and you just served them "
-                  "dessert.\n")
+            print("They are having a barbecue, and you just served them " "dessert.\n")
             game_over()
             time.sleep(2)
             restart_game()
@@ -319,8 +326,7 @@ def third_question(axe):
 
         if your_answer == "yes":
             time.sleep(2)
-            print("\nThat's probably a smart move, considering what's "
-                  "out there.")
+            print("\nThat's probably a smart move, considering what's " "out there.")
             axe = True
             time.sleep(1.5)
             print("\n--------------------------------------\n")
@@ -330,8 +336,10 @@ def third_question(axe):
 
         if your_answer == "no":
             time.sleep(2)
-            print("\nThat's probably a smart move.\nThe owner of the axe will "
-                  "not be happy when he notices it's gone.")
+            print(
+                "\nThat's probably a smart move.\nThe owner of the axe will "
+                "not be happy when he notices it's gone."
+            )
             axe = False
             time.sleep(1.5)
             print("\n--------------------------------------\n")
@@ -369,8 +377,10 @@ def first_riddle_intro():
     time.sleep(2)
     print("Gollum will let you go once you've played a game of riddles.\n")
     time.sleep(2.5)
-    print("He's giving you a fair chance to answer his riddles.\n"
-          "You'll get two options.")
+    print(
+        "He's giving you a fair chance to answer his riddles.\n"
+        "You'll get two options."
+    )
     time.sleep(3)
     print("So think carefully.\n")
     time.sleep(2)
@@ -389,10 +399,12 @@ def first_riddle(axe):
     # Displays the first riddle and possible answers
     print(riddles["First riddle"]["riddle"])
     time.sleep(7)
-    print("Choose between the following options: "
-          + riddles["First riddle"]["answers"][0]
-          + " or "
-          + riddles["First riddle"]["answers"][1])
+    print(
+        "Choose between the following options: "
+        + riddles["First riddle"]["answers"][0]
+        + " or "
+        + riddles["First riddle"]["answers"][1]
+    )
 
     while True:
         your_answer = input("What's your answer?\n")
@@ -400,8 +412,7 @@ def first_riddle(axe):
 
         # If the player answers "time" the loop breaks and they continue
         # to second_riddle
-        if your_answer.strip().lower() == riddles["First riddle"]\
-                ["answers"][0]:
+        if your_answer.strip().lower() == riddles["First riddle"]["answers"][0]:
             print("\nRight answer.")
             time.sleep(1.5)
             print("\n--------------------------------------\n")
@@ -440,10 +451,12 @@ def second_riddle(axe):
     # Displays the second riddle and possible answers
     print(riddles["Second riddle"]["riddle"])
     time.sleep(7)
-    print("Choose between the following options: "
-          + riddles["Second riddle"]["answers"][0]
-          + " or "
-          + riddles["Second riddle"]["answers"][1])
+    print(
+        "Choose between the following options: "
+        + riddles["Second riddle"]["answers"][0]
+        + " or "
+        + riddles["Second riddle"]["answers"][1]
+    )
 
     while True:
         your_answer = input("What's your answer?\n")
@@ -452,8 +465,7 @@ def second_riddle(axe):
 
         # If the player answers "darkness" the loop breaks and they continue
         # to final_question
-        if your_answer.strip().lower() == riddles["Second riddle"]\
-                ["answers"][0]:
+        if your_answer.strip().lower() == riddles["Second riddle"]["answers"][0]:
             print("\nRight answer.\n")
             time.sleep(2)
             print("You are very good at riddles.\n")
@@ -475,8 +487,7 @@ def second_riddle(axe):
         # If the player answers neither darkness or wind they are promped to
         # answer the question again
         if your_answer not in riddles["Second riddle"]["answers"]:
-            print("\nInvalid answer. Please choose between darkness "
-                  "or shadow.")
+            print("\nInvalid answer. Please choose between darkness " "or shadow.")
             continue
 
         print("\nWrong answer.\n")
@@ -538,8 +549,7 @@ def final_question(axe):
             time.sleep(2)
             print("You're so focused on not being spotted.")
             time.sleep(2)
-            print("That you don't notice the cliff you're slowly "
-                  "heading towards.\n")
+            print("That you don't notice the cliff you're slowly " "heading towards.\n")
             time.sleep(2)
             print("And down you fall, to a certain death.\n")
             time.sleep(2)
@@ -563,8 +573,10 @@ def final_question(axe):
                 time.sleep(2)
                 print("He offers you his map to help you find your way out.\n")
                 time.sleep(2)
-                print("With the map in you hand, you're out of the forest in "
-                      "no time!\n")
+                print(
+                    "With the map in you hand, you're out of the forest in "
+                    "no time!\n"
+                )
                 time.sleep(2.5)
                 print(Fore.GREEN + " ######################")
                 print(Fore.GREEN + " #                    #")
@@ -572,8 +584,10 @@ def final_question(axe):
                 print(Fore.GREEN + " #                    #")
                 print(Fore.GREEN + " ######################")
                 print(Style.RESET_ALL)
-                print(f"\nCongratulations, {CHARACTER_NAME}, you completed "
-                      "the Swedish Forest Text Adventure Game!\n")
+                print(
+                    f"\nCongratulations, {CHARACTER_NAME}, you completed "
+                    "the Swedish Forest Text Adventure Game!\n"
+                )
                 restart_game()
 
             # If axe == "yes" the player is directed to third_riddle
@@ -587,8 +601,10 @@ def final_question(axe):
                 print(Fore.RED + "THIEF!")
                 print(Style.RESET_ALL)
                 time.sleep(2)
-                print("Before you have time to react, the dwarf throws a "
-                      "rock at you.\n")
+                print(
+                    "Before you have time to react, the dwarf throws a "
+                    "rock at you.\n"
+                )
                 time.sleep(3)
                 print("It hits you right between the eyes.")
                 time.sleep(1.5)
@@ -633,10 +649,12 @@ def third_riddle():
     # Displays the third riddle and possible answers
     print(riddles["Third riddle"]["riddle"])
     time.sleep(4)
-    print("Choose between the following options: "
-          + riddles["Third riddle"]["answers"][0]
-          + " or "
-          + riddles["Third riddle"]["answers"][1])
+    print(
+        "Choose between the following options: "
+        + riddles["Third riddle"]["answers"][0]
+        + " or "
+        + riddles["Third riddle"]["answers"][1]
+    )
 
     while True:
         your_answer = input("What's your answer?\n")
@@ -644,8 +662,7 @@ def third_riddle():
 
         # If the player answers "egg" the loop breaks and they continue
         # to final_question
-        if your_answer.strip().lower() == riddles["Third riddle"]\
-                ["answers"][1]:
+        if your_answer.strip().lower() == riddles["Third riddle"]["answers"][1]:
             print("\nRight answer.\n")
             time.sleep(2)
             print("You're free to go, again.\n")
@@ -740,8 +757,10 @@ def second_final_question():
             print(Fore.GREEN + " ######################")
             print(Style.RESET_ALL)
             time.sleep(1.5)
-            print(f"Congratulations, {CHARACTER_NAME}! You completed the "
-                  "Swedish Forest Text Adventure Game!\n")
+            print(
+                f"Congratulations, {CHARACTER_NAME}! You completed the "
+                "Swedish Forest Text Adventure Game!\n"
+            )
             time.sleep(1.5)
             restart_game()
             break
@@ -751,8 +770,7 @@ def second_final_question():
             break
 
         # If the coin lands on "tails", it's game over
-        print("A trap door opens beneath you and you fall to your "
-              "death.\n")
+        print("A trap door opens beneath you and you fall to your " "death.\n")
         time.sleep(2)
         game_over()
         restart_game()
@@ -778,13 +796,13 @@ def restart_game():
     Lets the player choose to either restart the game or exit.
     """
 
-    start_over = input(f"Do you want to restart the game, {CHARACTER_NAME}? "
-                       "(yes or no): \n")
+    start_over = input(
+        f"Do you want to restart the game, {CHARACTER_NAME}? " "(yes or no): \n"
+    )
 
     while start_over.lower() not in ["yes", "no"]:
         print("\nPlease enter either 'yes' or 'no'.")
-        start_over = input("Do you want to restart the game? "
-                           "(yes or no): \n")
+        start_over = input("Do you want to restart the game? " "(yes or no): \n")
 
     if start_over.lower() == "yes":
         print("\n--------------------------------------")

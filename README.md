@@ -56,6 +56,9 @@ After displaying the "Game Over" message the player is asked to choose whether t
 
 ![Restart](docs/restart.png)
 
+### *Features left to implement*
+I would add a feature that allows the player to choose the desired speed at which the game runs. 
+
 ## **Testing**
 ### *Validator testing*
 
@@ -97,33 +100,33 @@ In this test, I also ensured that all the print messages were correct and displa
 ### *Unfixed bugs*
 I have not noticed any bugs that would affect the game, but it's still possible that there are minor bugs present that I have yet to discover. If that's the case, these minor bugs do not appear to impact the gameplay experience.
 
-I have however, encountered some warning messages that I'm unsure how to resolve:
-
+I have however, encountered one warning messages. 
+This one is beacuse I'm using a global variable:
 - global CHARACTER_NAME : Using the global statement at the module levelpylint(global-at-module-level)
 
-- if statements in while loop: Unnecessary "elif" after "break", remove the leading "el" from "elif"pylint(no-else-break) <b>
-This warning message is present in the following functions' while loops:
-choose_name, first_question function, second_question, third_question, first_riddle, second_riddle,
-final_question, third_riddle, second_final_question
+### *Other commentss*
+A few people in my family tested the game to see if they could spot any bugs, and also to provide feedback. One of the comments I received was that the game's pace was too fast, so I made adjustments to slow it down. <br>
 
-
-- on line 409, 462, 657: whitespace before '['flake8(E211)
+When I decided to create an axe variable that changes value based on player input, I initially made it a global variable for easy access throughout the game. However, as taught in the LMS, global variables should be avoided if possible. So i decided to change it, and instead pass the axe down as arguments in functions.  
+I encountered bugs and errors due to having to pass the axe argument down through the code, which took time to resolve. Although I eventually made it work, it would have been easier to understand and avoid potential bugs if I had continued using the global variable, at least for me as a new coder. If I had more time, I would consider changing it back to a global variable, but since the game is functioning as intended, I don't want to risk disrupting the code just hours before the deadline.
 
 ## **Technologies**
 - The game was developed using Python.
 - All content was stored on GitHub.
 - The game was deployed to the web using Heroku.
 - The flowchart was made using LucidChart.
-- Python module time was used to add a delay between pieces of code
-- Python module sys was used in the exit_game() function
+- Python module time was used to add a delay between pieces of code.
+- Python module sys was used in the exit_game() function.
+- Python module colorama was used to add colours and styles. 
 
 ## **Deployment**
 ### *Version Control*
 The git commands below were used throughout development to push code to the remote repository in GitHub:
-- `git add .` - This command was used to add a change in the working directory to the staging area
-- `git commit -m "message"` -This command was used to save changes to the local repository. A brief description of what has changed and when
-- `git push` - This command was used to push all commits to the remote repository on GitHub
+- `git add .` - This command was used to add a change in the working directory to the staging area.
+- `git commit -m "message"` -This command was used to save changes to the local repository. A brief description of what has changed and when.
+- `git push` - This command was used to push all commits to the remote repository on GitHub.
 ### *Deploy to Heroku*
+The steps below were followed to deploy the app to Heroku:
 - Open the Heroku website and select "New" to create a new app. 
 - After choosing a name for the new app, and selecting the correct region, click on "Create app". 
 - Navigate to "Settings" and go to the Config Vars section. Add a Config Var with the keyword "PORT" and 
@@ -134,13 +137,20 @@ Once Github is selected, locate your repository and link it to Heroku.
 - Scroll down to Manual Deploy, ensure that the "main" branch is selected, and click "Deploy Branch".
 - You will see the text "Your app was successfully deployed.". Click the button "View" to open the link to your
 deployed app. 
+### *Clone the Repository from GitHub*
+The steps below were followed to clone the repository locally: 
+- Navigate to the main page of the GitHub Repository you want to clone. 
+- Above the list of files, click on the drop-down button "<>Code".
+- Copy the repository link. 
+- Open Terminal, type git clone followed by the copied URL, and press enter to create your local clone.
+
 ## **Credits**
 - Code Institute LMS
 - Slack
 - My mentor Daisy McGirr
 - https://pypi.org/project/colorama/
-- The text adventure game is in some parts inspired by Lord of The Rings
-- All three riddles is taken from "The Hobbit: An Unexpected Journey"
+- The text adventure game is in some parts inspired by Lord of The Rings.
+- All three riddles is taken from "The Hobbit: An Unexpected Journey".
 
 Inspiration was taken from 
 - https://www.askpython.com/python/text-based-adventure-game
